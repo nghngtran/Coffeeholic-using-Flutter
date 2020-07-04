@@ -125,7 +125,7 @@ class _MyAppState extends State<MyApp> {
                 padding: const EdgeInsets.only(left: 20),
                 child: Swiper(
                   itemCount: data.length,
-                  itemWidth: MediaQuery.of(context).size.width - 2 *64,
+                  itemWidth: MediaQuery.of(context).size.width - 2 *55,
                   layout: SwiperLayout.STACK,
                   pagination: SwiperPagination(
                     builder:
