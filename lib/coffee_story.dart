@@ -23,7 +23,7 @@ class CoffeeStoryPage extends StatelessWidget{
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
               children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
-                color: Colors.black.withOpacity(0.8),
+//                color: Colors.black.withOpacity(0.8),
                 child: Text(coffeeStory.subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
     ),
             ]),
@@ -46,7 +46,7 @@ Container _container(BuildContext context, CoffeeStory coffeeStory)
       BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
         child: Wrap(
             children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
-              color: Colors.black.withOpacity(0.8),
+//              color: Colors.black.withOpacity(0.8),
               child: Text(coffeeStory.subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
             ),
             ]),
@@ -62,99 +62,111 @@ class CoffeeStoryBoardState extends State<CoffeeStoryBoard>{
     double h = MediaQuery.of(context).size.height/100;
     double w = MediaQuery.of(context).size.width/100;
     List<Container> pages = [
-      Container(
+      Container(width: w*100,height: h*100,
           decoration: BoxDecoration(image: DecorationImage(image:
-          AssetImage(db[0].imgUrl),fit: BoxFit.fitHeight)),
+          AssetImage(db[0].imgUrl),fit: BoxFit.fill)),
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
-                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
-                  color: Colors.black.withOpacity(0.8),
-                  child: Text(db[0].subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, 0, h*1.5),margin: EdgeInsets.fromLTRB(w*42, h*12, w*8, h),
+//                  color: Colors.black.withOpacity(0.8),
+                  child: Text(db[0].subtitle,style: TextStyle(fontSize: 28,color: Colors.black,fontFamily: 'Dancing Script',fontWeight: FontWeight.bold,letterSpacing: 1.0)),
                 ),
                 ]),
           )),
-      Container(
+      Container(width: w*100,height: h*100,
           decoration: BoxDecoration(image: DecorationImage(image:
-          AssetImage(db[1].imgUrl),fit: BoxFit.fitHeight)),
+          AssetImage(db[1].imgUrl),fit: BoxFit.fill)),
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
-                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
-                  color: Colors.black.withOpacity(0.8),
-                  child: Text(db[1].subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1, w, h*1.5),margin: EdgeInsets.fromLTRB(w, h*8, w*35, h),
+//                  color: Colors.white.withOpacity(0.8),
+                  child: Text(db[1].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script')),
                 ),
                 ]),
           )),
-      Container(
+      Container(width: w*100,height: h*100,
           decoration: BoxDecoration(image: DecorationImage(image:
           AssetImage(db[2].imgUrl),fit: BoxFit.fitHeight)),
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
-                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
-                  color: Colors.black.withOpacity(0.8),
-                  child: Text(db[2].subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1, w, h/2),margin: EdgeInsets.fromLTRB(w*2, h*8, w*45, h),
+                  color: Colors.white.withOpacity(0.65),
+                  child: Text(db[2].subtitle,style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'Dancing Script')),
                 ),
                 ]),
           )),
-      Container(
+      Container(width: w*100,height: h*100,
           decoration: BoxDecoration(image: DecorationImage(image:
-          AssetImage(db[3].imgUrl),fit: BoxFit.fitHeight)),
+          AssetImage(db[3].imgUrl),fit: BoxFit.fill)),
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
-                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
-                  color: Colors.black.withOpacity(0.8),
-                  child: Text(db[3].subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*2, h*15, w*50, h),
+//                  color: Colors.black.withOpacity(0.8),
+                  child: Text(db[3].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script')),
                 ),
                 ]),
           )),
-      Container(
+      Container(width: w*100,height: h*100,
           decoration: BoxDecoration(image: DecorationImage(image:
-          AssetImage(db[4].imgUrl),fit: BoxFit.fitHeight)),
+          AssetImage(db[4].imgUrl),fit: BoxFit.fill)),
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
-                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
-                  color: Colors.black.withOpacity(0.8),
-                  child: Text(db[4].subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, w, h*1.5),margin: EdgeInsets.fromLTRB(w*5, h*15, w*45, h),
+                  color: Colors.black.withOpacity(0.4),
+                  child: Text(db[4].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script',letterSpacing: 1.0,fontWeight: FontWeight.w500)),
                 ),
                 ]),
           )),
-      Container(
+      Container(width: w*100,height: h*100,
           decoration: BoxDecoration(image: DecorationImage(image:
-          AssetImage(db[5].imgUrl),fit: BoxFit.fitHeight)),
+          AssetImage(db[5].imgUrl),fit: BoxFit.fill)),
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
-                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
-                  color: Colors.black.withOpacity(0.8),
-                  child: Text(db[5].subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*2, h*65, w*50, h),
+//                  color: Colors.black.withOpacity(0.8),
+                  child: Text(db[5].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script')),
                 ),
                 ]),
           )),
-      Container(
+      Container(width: w*100,height: h*100,
           decoration: BoxDecoration(image: DecorationImage(image:
           AssetImage(db[6].imgUrl),fit: BoxFit.fitHeight)),
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
-                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
-                  color: Colors.black.withOpacity(0.8),
-                  child: Text(db[6].subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*1, h*1.5),margin: EdgeInsets.fromLTRB(w*33, h*7, w, h),
+//                  color: Colors.black.withOpacity(0.8),
+                  child: Text(db[6].subtitle,style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'Dancing Script')),
                 ),
                 ]),
           )),
-      Container(
+      Container(width: w*100,height: h*100,
           decoration: BoxDecoration(image: DecorationImage(image:
-          AssetImage(db[7].imgUrl),fit: BoxFit.fitHeight)),
+          AssetImage(db[7].imgUrl),fit: BoxFit.fill)),
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
-                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
-                  color: Colors.black.withOpacity(0.8),
-                  child: Text(db[7].subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*2, h, 0, h),margin: EdgeInsets.fromLTRB(w*3, h*8, w*40, h),
+                  color: Colors.brown.withOpacity(0.5),
+                  child: Text(db[7].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script',fontWeight: FontWeight.w400)),
+                ),
+                ]),
+          )),
+      Container(width: w*100,height: h*100,
+          decoration: BoxDecoration(image: DecorationImage(image:
+          AssetImage(db[8].imgUrl),fit: BoxFit.fill)),
+          child:
+          BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
+            child: Wrap(
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, 0, h*1.5),margin: EdgeInsets.fromLTRB(w*5, h*75, w*5, h*3),
+//                  color: Colors.black.withOpacity(0.8),
+                  child: Text(db[8].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script')),
                 ),
                 ]),
           )),
