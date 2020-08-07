@@ -4,7 +4,7 @@ class CoffeeStory{
   CoffeeStory(this.imgUrl, this.subtitle);
 }
 List<CoffeeStory> coffeeStoryData = [
-  CoffeeStory("assets/CS.png","Hành trình từ nông trại đến tách cà phê thơm ngon, đậm vị, xiêu lòng người thưởng thức"),
+  CoffeeStory("assets/CS.jpeg","Hành trình từ nông trại đến tách cà phê thơm ngon, đậm vị, xiêu lòng người thưởng thức"),
   CoffeeStory("assets/CS13.png","Sắc trắng tinh khôi mang trọn vẹn hương sắc quyến rũ, không quá nồng nàn và dịu nhẹ, thoang thoảng mùi hương cà phê thu hút lũ ong mật, nổi bật trên nền lá xanh tươi"),
   CoffeeStory("assets/CS1.png","Sau khoảng thời gian đơm hoa ngắn ngủi, cây bắt đầu kết trái. Từng chùm cà phê kết lại, trái đỏ âu căng bóng bẩy. Cà phê thường được thu hoạch bằng tay, hoặc máy lắc cơ chuyên dụng. Thế nhưng, việc thu hoạch bằng tay tuy khá đắt đỏ và tốn công sức nhưng mang lại chất lượng cà phê tuyệt hảo"),
   CoffeeStory("assets/CS2.png","Ngay sau khi thu hoạch, tiến hành sơ chế và phân loại hạt cà phê dựa trên những tiêu chuẩn nhất định, đánh giá chất lượng thành phẩm và sàng lọc"),

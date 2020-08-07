@@ -64,13 +64,13 @@ class CoffeeStoryBoardState extends State<CoffeeStoryBoard>{
     List<Container> pages = [
       Container(width: w*100,height: h*100,
           decoration: BoxDecoration(image: DecorationImage(image:
-          AssetImage(db[0].imgUrl),fit: BoxFit.fill)),
+          AssetImage(db[0].imgUrl),fit: BoxFit.fitHeight)),
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
                 children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, 0, h*1.5),margin: EdgeInsets.fromLTRB(w*42, h*12, w*8, h),
 //                  color: Colors.black.withOpacity(0.8),
-                  child: Text(db[0].subtitle,style: TextStyle(fontSize: 28,color: Colors.black,fontFamily: 'Dancing Script',fontWeight: FontWeight.bold,letterSpacing: 1.0)),
+                  child: Text(db[0].subtitle,style: TextStyle(fontSize: 28,color: Colors.white,fontFamily: 'Dancing Script',fontWeight: FontWeight.bold,letterSpacing: 1.0)),
                 ),
                 ]),
           )),
@@ -140,9 +140,9 @@ class CoffeeStoryBoardState extends State<CoffeeStoryBoard>{
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
-                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*1, h*1.5),margin: EdgeInsets.fromLTRB(w*33, h*7, w, h),
-//                  color: Colors.black.withOpacity(0.8),
-                  child: Text(db[6].subtitle,style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'Dancing Script')),
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*1, h*1.5),margin: EdgeInsets.fromLTRB(w*30, h*8, w*3, h),
+                  color: Colors.black.withOpacity(0.6),
+                  child: Text(db[6].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script')),
                 ),
                 ]),
           )),

@@ -60,6 +60,9 @@ flutter:
   # example:
 
   fonts:
+    - family: Dancing Script
+      fonts:
+        - asset: assets/DancingScript-VariableFont_wght.ttf
     - family: SF-Pro-Text-Regular
       fonts:
         - asset: assets/SF-Pro-Text-Regular.otf
