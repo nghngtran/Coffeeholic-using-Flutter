@@ -67,5 +67,25 @@ List<CoffeeInfo> data= [
       iconImage: "assets/image_3.jpg",
       description: "Một tình yêu đẹp có vị giống một ly cà phê ngon. Có đủ đắng, chua, chát. Và hậu vị ngọt béo thật dài. Tùy vào mỗi người mà hương vị được gia giảm khác nhau. Cuối cùng, thành quả là ly cà phê đầy bí ẩn, mời gọi ta nếm thử. Có ly ngon nhưng quá nặng đô, không thể đi cùng hết đoạn đường dài. Có ly vừa đủ, đủ bình yên và đủ gắn bó cả đời.",
       images: ["assets/image_11.jpg","assets/image_10.jpg","assets/image_12.jpg"]
+  ), CoffeeInfo(
+      position: "16 Tăng Bạt Hổ, Hoàn Kiếm, Hà Nội",
+      name: "LÀ VIỆT Coffee giữa lòng Hà Nội nhiêu yêu thương",
+      iconImage: "assets/image_19.jpg",
+      description: "Specialty coffee hay còn gọi là làn sóng cà phê thứ 3, xuất hiện đầu tiên trên thế giới vào năm 1970. Không chỉ là tên gọi của một loại cà phê mà còn cả một quy trình chế biến đặc biệt. Tuyển chọn khắt khe từng hạt cà phê theo tiêu chuẩn cho đến công thức, kỹ thuật rang, xay và pha chế công phu, tỉ mỉ.",
+      images: ["assets/image_19.jpg","assets/image_20.jpg","assets/image_21.jpg"]
+  ),
+  CoffeeInfo(
+      position: "166 đường 2/9, Hải Châu, Đà Nẵng",
+      name: "Mintown Coffee Roasting - Không chỉ là cà phê thuần túy ",
+      iconImage: "assets/image_4.jpg",
+      description: "Specialty coffee hay còn gọi là làn sóng cà phê thứ 3, xuất hiện đầu tiên trên thế giới vào năm 1970. Không chỉ là tên gọi của một loại cà phê mà còn cả một quy trình chế biến đặc biệt. Tuyển chọn khắt khe từng hạt cà phê theo tiêu chuẩn cho đến công thức, kỹ thuật rang, xay và pha chế công phu, tỉ mỉ.",
+      images: ["assets/image_16.jpg","assets/image_17.jpg","assets/image_18.jpg"]
+  ),
+  CoffeeInfo(
+      position: "21B Lê Lợi, quận 1, TP HCM",
+      name: "Thinker & Dreamer - Kẻ ôm mộng mơ giữa lòng Sài Thành",
+      iconImage: "assets/image_3.jpg",
+      description: "Một tình yêu đẹp có vị giống một ly cà phê ngon. Có đủ đắng, chua, chát. Và hậu vị ngọt béo thật dài. Tùy vào mỗi người mà hương vị được gia giảm khác nhau. Cuối cùng, thành quả là ly cà phê đầy bí ẩn, mời gọi ta nếm thử. Có ly ngon nhưng quá nặng đô, không thể đi cùng hết đoạn đường dài. Có ly vừa đủ, đủ bình yên và đủ gắn bó cả đời.",
+      images: ["assets/image_11.jpg","assets/image_10.jpg","assets/image_12.jpg"]
   )
 ];

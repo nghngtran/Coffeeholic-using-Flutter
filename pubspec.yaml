@@ -24,7 +24,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flutter_swiper: ^1.1.6
-
+  liquid_swipe: ^1.5.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -60,6 +60,9 @@ flutter:
   # example:
 
   fonts:
+    - family: Dancing Script
+      fonts:
+        - asset: assets/DancingScript-VariableFont_wght.ttf
     - family: SF-Pro-Text-Regular
       fonts:
         - asset: assets/SF-Pro-Text-Regular.otf
