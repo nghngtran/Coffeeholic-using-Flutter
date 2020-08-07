@@ -164,7 +164,7 @@ class CoffeeStoryBoardState extends State<CoffeeStoryBoard>{
           child:
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
-                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, 0, h*1.5),margin: EdgeInsets.fromLTRB(w*5, h*75, w*5, h*3),
+                children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, 0, 0),margin: EdgeInsets.fromLTRB(w*35, h*68, w*5, h*5),
 //                  color: Colors.black.withOpacity(0.8),
                   child: Text(db[8].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script')),
                 ),
