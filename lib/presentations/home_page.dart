@@ -1,10 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/customIcons.dart';
 import 'package:flutter_story_app_concept/data.dart';
 import 'package:flutter_story_app_concept/detail_page.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -29,39 +31,117 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: Drawer(
           child: Container(
-            color: Colors.black.withOpacity(0.9),
-            padding: EdgeInsets.only(left: 20, bottom: 30),
+            color: Hexcolor("#F2F2F2"),
+            padding: EdgeInsets.only(left: 10,bottom: 30),
             child: ListView(
               children: <Widget>[
-                SizedBox(height: 30),
-                GestureDetector(onTap: (){
-
-                },
-                  child: Text("Trang chủ",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontFamily: "Calibre-Semibold",
-                      )),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Image.asset("assets/Menu_lofo.png"),
+                    SizedBox(width: 5,),
+                    Image.asset("assets/Coffeeholic.png"),
+                  ],
                 ),
-                SizedBox(height: 15),
-                GestureDetector(onTap: (){
-
-                },
-                  child: Text("Tin tức",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontFamily: "Calibre-Semibold",
-                      )),
-                ),
-                SizedBox(height: 15),
+                Divider(color: Colors.grey,),
                 GestureDetector(onTap: (){
                   Navigator.of(context).pushNamed('coffee_story');
                 },
-                  child: Text("Câu chuyện từ nông trại",
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/icon_book.png"),
+                      SizedBox(width: 5,),
+                      Text("Câu chuyện cà phê",
+                          style: TextStyle(
+                            color: ColorApp.colorBrown,
+                            fontSize: 20.0,
+                            fontFamily: "Calibre-Semibold",
+                          )),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 15),
+                GestureDetector(onTap: (){},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/icon_drink.png"),
+                      SizedBox(width: 5,),
+                      Text("Thường thức cà phê",
+                          style: TextStyle(
+                            color: ColorApp.colorBrown,
+                            fontSize: 20.0,
+                            fontFamily: "Calibre-Semibold",
+                          )),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 15),
+                GestureDetector(onTap: (){
+                },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/icon_shop.png"),
+                      SizedBox(width: 5,),
+                      Text("Đề xuất quán",
+                          style: TextStyle(
+                            color: ColorApp.colorBrown,
+                            fontSize: 20.0,
+                            fontFamily: "Calibre-Semibold",
+                          )),
+                    ],
+                  ),
+                ),
+                Divider(color: Colors.grey,),
+                GestureDetector(onTap: (){
+                },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/icon_post.png"),
+                      SizedBox(width: 5,),
+                      Text("Đăng bài (Admin)",
+                          style: TextStyle(
+                            color: ColorApp.colorBrown,
+                            fontSize: 20.0,
+                            fontFamily: "Calibre-Semibold",
+                          )),
+                    ],
+                  ),
+                ),
+                Divider(color: Colors.grey,),
+                GestureDetector(onTap: (){
+
+                },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/icon_gear.png"),
+                      SizedBox(width: 5,),
+                      Text("Cài đặt",
+                          style: TextStyle(
+                            color: ColorApp.colorBrown,
+                            fontSize: 20.0,
+                            fontFamily: "Calibre-Semibold",
+                          )),
+                    ],
+                  ),
+                ),
+                Divider(color:Colors.grey),
+                GestureDetector(onTap: (){
+
+                },
+                  child: Text("Hỗ trợ & Phản hồi",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: ColorApp.colorBrown,
                         fontSize: 20.0,
                         fontFamily: "Calibre-Semibold",
                       )),
@@ -70,24 +150,13 @@ class _HomePageState extends State<HomePage> {
                 GestureDetector(onTap: (){
 
                 },
-                  child: Text("Thưởng thức cà phê",
+                  child: Text("Thông tin về Coffeeholic",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: ColorApp.colorBrown,
                         fontSize: 20.0,
                         fontFamily: "Calibre-Semibold",
                       )),
                 ),
-                SizedBox(height: 15),
-                GestureDetector(onTap: (){
-
-                },
-                  child: Text("Đề xuất quán theo quận",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontFamily: "Calibre-Semibold",
-                      )),
-                )
               ],
             ),
           )),

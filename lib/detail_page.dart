@@ -25,7 +25,7 @@ class DetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-        Container(margin: EdgeInsets.only(top:50),
+                  Container(margin: EdgeInsets.only(top:50),
                         height: 250,width: MediaQuery.of(context).size.width,child:Image.asset(coffeeInfo.iconImage,fit: BoxFit.fitWidth),
                       ),
                   Padding(
