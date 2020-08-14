@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_story_app_concept/application/router.dart';
+import 'package:flutter_story_app_concept/coffee_knowledge.dart';
 import 'package:flutter_story_app_concept/coffee_story.dart';
 import 'package:flutter_story_app_concept/data/coffee_story.dart';
 import 'package:flutter_story_app_concept/detail_page.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       //initialRoute: RoutePaths.PreViewSelectServices,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Router.generateRoute,
-      home: CoffeeStoryBoard(),
+      home: CoffeeKnowledgePage(),
     );
   }
 }
