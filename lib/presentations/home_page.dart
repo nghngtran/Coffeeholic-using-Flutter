@@ -160,9 +160,15 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           )),
-      backgroundColor: Colors.transparent,
+      backgroundColor: ColorApp.colorWhite,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: ColorApp.colorBrown,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: (){},
+          ),
+        ],
         leading: Builder(
             builder: (context) => IconButton(
               padding: EdgeInsets.only(left: 12),
@@ -213,7 +219,7 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Text("Home of Coffeeholic",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 28.0,
                         fontFamily: "Calibre-Semibold",
                         letterSpacing: 1.0,
@@ -222,7 +228,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icon(
                       CustomIcons.option,
                       size: 12.0,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                     onPressed: () {},
                   )
@@ -291,7 +297,7 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Text("Favourite",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 46.0,
                         fontFamily: "Calibre-Semibold",
                         letterSpacing: 1.0,
@@ -300,7 +306,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icon(
                       CustomIcons.option,
                       size: 12.0,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                     onPressed: () {},
                   )
