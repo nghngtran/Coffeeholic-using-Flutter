@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/presentations/home_page.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -14,7 +15,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 3),
+        Duration(seconds: 2),
             () => Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (BuildContext context) => HomePage())));
   }
@@ -25,7 +26,7 @@ class _SplashPageState extends State<SplashPage> {
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: Hexcolor("#684C37"),
+          color: ColorApp.colorYellow,
         ),
         child: Center(
           child: Image.asset("assets/logo1.png"),
