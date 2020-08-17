@@ -69,7 +69,6 @@ class CoffeeStoryBoardState extends State<CoffeeStoryBoard>{
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
                 children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, 0, h*1.5),margin: EdgeInsets.fromLTRB(w*42, h*12, w*8, h),
-//                  color: Colors.black.withOpacity(0.8),
                   child: Text(db[0].subtitle,style: TextStyle(fontSize: 28,color: Colors.white,fontFamily: 'Dancing Script',fontWeight: FontWeight.bold,letterSpacing: 1.0)),
                 ),
                 ]),
@@ -81,7 +80,6 @@ class CoffeeStoryBoardState extends State<CoffeeStoryBoard>{
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
                 children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1, w, h*1.5),margin: EdgeInsets.fromLTRB(w, h*8, w*35, h),
-//                  color: Colors.white.withOpacity(0.8),
                   child: Text(db[1].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script')),
                 ),
                 ]),
@@ -105,7 +103,6 @@ class CoffeeStoryBoardState extends State<CoffeeStoryBoard>{
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
                 children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*2, h*15, w*50, h),
-//                  color: Colors.black.withOpacity(0.8),
                   child: Text(db[3].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script')),
                 ),
                 ]),
@@ -129,7 +126,6 @@ class CoffeeStoryBoardState extends State<CoffeeStoryBoard>{
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
             child: Wrap(
                 children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*2, h*65, w*50, h),
-//                  color: Colors.black.withOpacity(0.8),
                   child: Text(db[5].subtitle,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: 'Dancing Script')),
                 ),
                 ]),
