@@ -7,7 +7,7 @@ import 'package:flutter_story_app_concept/data.dart';
 import 'package:flutter_story_app_concept/detail_page.dart';
 import 'package:flutter_story_app_concept/presentations/drawer.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:hexcolor/hexcolor.dart';
+
 
 class HomePage extends StatefulWidget {
   @override

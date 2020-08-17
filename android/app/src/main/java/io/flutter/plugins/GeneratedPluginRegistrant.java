@@ -1,7 +1,7 @@
 package io.flutter.plugins;
 
 import io.flutter.plugin.common.PluginRegistry;
-import com.ggichure.github.hexcolor.HexcolorPlugin;
+import io.flutter.plugins.pathprovider.PathProviderPlugin;
 
 /**
  * Generated file. Do not edit.
@@ -11,7 +11,7 @@ public final class GeneratedPluginRegistrant {
     if (alreadyRegisteredWith(registry)) {
       return;
     }
-    HexcolorPlugin.registerWith(registry.registrarFor("com.ggichure.github.hexcolor.HexcolorPlugin"));
+    PathProviderPlugin.registerWith(registry.registrarFor("io.flutter.plugins.pathprovider.PathProviderPlugin"));
   }
 
   private static boolean alreadyRegisteredWith(PluginRegistry registry) {

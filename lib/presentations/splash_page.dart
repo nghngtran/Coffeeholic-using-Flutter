@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/presentations/home_page.dart';
-import 'package:hexcolor/hexcolor.dart';
+
 
 class SplashPage extends StatefulWidget {
   @override

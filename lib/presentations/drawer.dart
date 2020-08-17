@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_story_app_concept/application/constant.dart';
-import 'package:hexcolor/hexcolor.dart';
+
 
 class CustomDrawer extends  StatelessWidget{
   @override
@@ -30,7 +30,7 @@ class CustomDrawer extends  StatelessWidget{
                 SizedBox(width: 5,),
                 Text("Trang chủ",
                     style: TextStyle(
-                      color: Hexcolor("854836"),
+                      color: ColorApp.colorCoffee,
                       fontSize: 20.0,
                     )),
               ],
@@ -48,7 +48,7 @@ class CustomDrawer extends  StatelessWidget{
                 SizedBox(width: 5,),
                 Text("Câu chuyện cà phê",
                     style: TextStyle(
-                      color: Hexcolor("854836"),
+                      color: ColorApp.colorCoffee,
                       fontSize: 20.0,
 //                      fontFamily: "Calibre-Semibold",
                     )),
@@ -65,7 +65,7 @@ class CustomDrawer extends  StatelessWidget{
                 SizedBox(width: 5,),
                 Text("Thường thức cà phê",
                     style: TextStyle(
-                      color: Hexcolor("854836"),
+                      color: ColorApp.colorCoffee,
                       fontSize: 20.0,
 //                      fontFamily: "Calibre-Semibold",
                     )),
@@ -83,7 +83,7 @@ class CustomDrawer extends  StatelessWidget{
                 SizedBox(width: 5,),
                 Text("Đề xuất quán",
                     style: TextStyle(
-                      color: Hexcolor("854836"),
+                      color: ColorApp.colorCoffee,
                       fontSize: 20.0,
 //                      fontFamily: "Calibre-Semibold",
                     )),
@@ -120,7 +120,7 @@ class CustomDrawer extends  StatelessWidget{
                 SizedBox(width: 5,),
                 Text("Cài đặt",
                     style: TextStyle(
-                      color: Hexcolor("854836"),
+                      color: ColorApp.colorCoffee,
                       fontSize: 20.0,
                     )),
               ],
@@ -132,7 +132,7 @@ class CustomDrawer extends  StatelessWidget{
           },
             child: Text("Hỗ trợ & Phản hồi",
                 style: TextStyle(
-                  color: Hexcolor("854836"),
+                  color: ColorApp.colorCoffee,
                   fontSize: 18.0,
 //                  fontFamily: "Calibre-Semibold",
                 )),
@@ -143,7 +143,7 @@ class CustomDrawer extends  StatelessWidget{
           },
             child: Text("Thông tin về Coffeeholic",
                 style: TextStyle(
-                  color: Hexcolor("854836"),
+                  color: ColorApp.colorCoffee,
                   fontSize: 18.0,
 //                  fontFamily: "Calibre-Semibold",
                 )),
