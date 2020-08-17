@@ -45,6 +45,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets/
+   - assets/mug.png
 
 
 
@@ -61,6 +62,9 @@ flutter:
   # example:
 
   fonts:
+    - family: Sriracha
+      fonts:
+        - asset: assets/Sriracha-Regular.ttf
     - family: Dancing Script
       fonts:
         - asset: assets/DancingScript-VariableFont_wght.ttf
@@ -76,9 +80,6 @@ flutter:
       fonts:
         - asset: assets/Calibre Semibold.otf
 
-    - family: CustomIcons
-      fonts:
-        - asset: assets/custom_icons.ttf
    
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages

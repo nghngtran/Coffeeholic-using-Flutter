@@ -5,6 +5,7 @@ import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/customIcons.dart';
 import 'package:flutter_story_app_concept/data.dart';
 import 'package:flutter_story_app_concept/detail_page.dart';
+import 'package:flutter_story_app_concept/presentations/drawer.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -30,142 +31,14 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       drawer: Drawer(
-          child: Container(
-            color: Hexcolor("#F2F2F2"),
-            padding: EdgeInsets.only(left: 10,bottom: 30),
-            child: ListView(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Image.asset("assets/Menu_lofo.png"),
-                    SizedBox(width: 5,),
-                    Image.asset("assets/Coffeeholic.png"),
-                  ],
-                ),
-                Divider(color: Colors.grey,),
-                GestureDetector(onTap: (){
-                  Navigator.of(context).pushNamed('coffee_story');
-                },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/icon_book.png"),
-                      SizedBox(width: 5,),
-                      Text("Câu chuyện cà phê",
-                          style: TextStyle(
-                            color: ColorApp.colorBrown,
-                            fontSize: 20.0,
-                            fontFamily: "Calibre-Semibold",
-                          )),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 15),
-                GestureDetector(onTap: (){},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/icon_drink.png"),
-                      SizedBox(width: 5,),
-                      Text("Thường thức cà phê",
-                          style: TextStyle(
-                            color: ColorApp.colorBrown,
-                            fontSize: 20.0,
-                            fontFamily: "Calibre-Semibold",
-                          )),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 15),
-                GestureDetector(onTap: (){
-                },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/icon_shop.png"),
-                      SizedBox(width: 5,),
-                      Text("Đề xuất quán",
-                          style: TextStyle(
-                            color: ColorApp.colorBrown,
-                            fontSize: 20.0,
-                            fontFamily: "Calibre-Semibold",
-                          )),
-                    ],
-                  ),
-                ),
-                Divider(color: Colors.grey,),
-                GestureDetector(onTap: (){
-                },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/icon_post.png"),
-                      SizedBox(width: 5,),
-                      Text("Đăng bài (Admin)",
-                          style: TextStyle(
-                            color: ColorApp.colorBrown,
-                            fontSize: 20.0,
-                            fontFamily: "Calibre-Semibold",
-                          )),
-                    ],
-                  ),
-                ),
-                Divider(color: Colors.grey,),
-                GestureDetector(onTap: (){
-
-                },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/icon_gear.png"),
-                      SizedBox(width: 5,),
-                      Text("Cài đặt",
-                          style: TextStyle(
-                            color: ColorApp.colorBrown,
-                            fontSize: 20.0,
-                            fontFamily: "Calibre-Semibold",
-                          )),
-                    ],
-                  ),
-                ),
-                Divider(color:Colors.grey),
-                GestureDetector(onTap: (){
-
-                },
-                  child: Text("Hỗ trợ & Phản hồi",
-                      style: TextStyle(
-                        color: ColorApp.colorBrown,
-                        fontSize: 20.0,
-                        fontFamily: "Calibre-Semibold",
-                      )),
-                ),
-                SizedBox(height: 15),
-                GestureDetector(onTap: (){
-
-                },
-                  child: Text("Thông tin về Coffeeholic",
-                      style: TextStyle(
-                        color: ColorApp.colorBrown,
-                        fontSize: 20.0,
-                        fontFamily: "Calibre-Semibold",
-                      )),
-                ),
-              ],
-            ),
-          )),
-      backgroundColor: ColorApp.colorWhite,
+          child: CustomDrawer()),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: ColorApp.colorBrown,
+        backgroundColor: ColorApp.colorYellow,
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.search,size: 30),
+            color: ColorApp.colorBrown,
             onPressed: (){},
           ),
         ],
@@ -174,7 +47,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(left: 12),
               icon: Icon(
                 CustomIcons.menu,
-                color: Colors.white,
+                color: ColorApp.colorBrown,
                 size: 30.0,
               ),
               onPressed: () {
@@ -183,43 +56,29 @@ class _HomePageState extends State<HomePage> {
             )),
       ),
       body: SingleChildScrollView(
-        child: Column(
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 12.0, right: 12.0, top: 30.0, bottom: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-//                    IconButton(
-//                      icon: Icon(
-//                        CustomIcons.menu,
-//                        color: Colors.white,
-//                        size: 30.0,
-//                      ),
-//                      onPressed: () {
-//                       Scaffold.of(context).openDrawer();
-//                      },
-//                    ),
-//                    IconButton(
-//                      icon: Icon(
-//                        Icons.search,
-//                        color: Colors.white,
-//                        size: 30.0,
-//                      ),
-//                      onPressed: () {},
-//                    )
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text("Home of Coffeeholic",
+            Padding(padding: EdgeInsets.fromLTRB(3, 10, 10, 0),
+              child:
+                Row(children: <Widget> [
+                  Image.asset("assets/home_logo.png",width: 80,height: 50,scale: 1.5),
+                  Text("Nhà cà phê holic",
                       style: TextStyle(
                         color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: "Sriracha",
+                        letterSpacing: 1.0,
+                      ))]),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text("Khám phá",
+                      style: TextStyle(
+                        color: ColorApp.colorCoffee,
                         fontSize: 28.0,
                         fontFamily: "Calibre-Semibold",
                         letterSpacing: 1.0,
@@ -228,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icon(
                       CustomIcons.option,
                       size: 12.0,
-                      color: Colors.black,
+                      color: ColorApp.colorCoffee,
                     ),
                     onPressed: () {},
                   )
@@ -236,27 +95,27 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20.0),
+              padding: EdgeInsets.only(left: 20.0),
               child: Row(
                 children: <Widget>[
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFFff6e6e),
+                      color: ColorApp.colorYellow,
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Center(
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 22.0, vertical: 6.0),
-                        child: Text("Top Views",
-                            style: TextStyle(color: Colors.white)),
+                        child: Text("Xem nhiều",
+                            style: TextStyle(color: Colors.black)),
                       ),
                     ),
                   ),
                   SizedBox(
                     width: 15.0,
                   ),
-                  Text("Blog", style: TextStyle(color: Colors.blueAccent))
+                  Text("Bài viết ", style: TextStyle(color: Colors.black))
                 ],
               ),
             ),
@@ -271,7 +130,9 @@ class _HomePageState extends State<HomePage> {
                     layout: SwiperLayout.STACK,
                     pagination: SwiperPagination(
                       builder:
-                      DotSwiperPaginationBuilder(activeSize: 20, space: 8),
+                      DotSwiperPaginationBuilder(color: ColorApp.colorYellow.withOpacity(0.7),
+                          activeColor: ColorApp.colorCoffee,
+                          activeSize: 20, space: 8),
                     ),
                     itemBuilder: (context, index) {
                       return InkWell(
@@ -286,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                             );
                           },
                           child: Stack(children: <Widget>[
-//                        SizedBox(height: 10),
+
                             CardItem(data[index])
                           ]));
                     })),
@@ -295,10 +156,10 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text("Favourite",
+                  Text("Yêu thích",
                       style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 46.0,
+                        color: ColorApp.colorCoffee,
+                        fontSize: 28.0,
                         fontFamily: "Calibre-Semibold",
                         letterSpacing: 1.0,
                       )),
@@ -306,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icon(
                       CustomIcons.option,
                       size: 12.0,
-                      color: Colors.black,
+                      color: ColorApp.colorCoffee,
                     ),
                     onPressed: () {},
                   )
@@ -319,22 +180,22 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.blueAccent,
+                      color: ColorApp.colorYellow,
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Center(
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 22.0, vertical: 6.0),
-                        child: Text("Latest",
-                            style: TextStyle(color: Colors.white)),
+                        child: Text("Gần đây",
+                            style: TextStyle(color: Colors.black)),
                       ),
                     ),
                   ),
                   SizedBox(
                     width: 15.0,
                   ),
-                  Text("9+ Stories", style: TextStyle(color: Colors.blueAccent))
+                  Text("Đã lưu", style: TextStyle(color: Colors.black))
                 ],
               ),
             ),
@@ -436,16 +297,16 @@ class CardScrollWidget extends StatelessWidget {
                               height: 10.0,
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(
+                              padding: EdgeInsets.only(
                                   left: 12.0, bottom: 12.0),
                               child: Container(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 22.0, vertical: 6.0),
                                 decoration: BoxDecoration(
-                                    color: Colors.blueAccent,
+                                    color: ColorApp.colorYellow,
                                     borderRadius: BorderRadius.circular(20.0)),
-                                child: Text("Read more",
-                                    style: TextStyle(color: Colors.white)),
+                                child: Text("Chi tiết",
+                                    style: TextStyle(color: Colors.black)),
                               ),
                             )
                           ],
@@ -510,10 +371,10 @@ class CardItem extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             horizontal: 22.0, vertical: 6.0),
                         decoration: BoxDecoration(
-                            color: Colors.blueAccent,
+                            color: ColorApp.colorYellow,
                             borderRadius: BorderRadius.circular(20.0)),
-                        child: Text("Read more",
-                            style: TextStyle(color: Colors.white)),
+                        child: Text("Chi tiết",
+                            style: TextStyle(color: Colors.black)),
                       ),
                     )
                   ],

@@ -23,9 +23,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
-      title: "Coffeeholic",
-      debugShowMaterialGrid: false,
-      theme: ThemeData(),
+      title: "Zen Checkin",
+
+      theme: ThemeData(
+
+      ),
       //initialRoute: RoutePaths.PreViewSelectServices,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Router.generateRoute,
