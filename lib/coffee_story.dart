@@ -184,13 +184,13 @@ class CoffeeStoryBoardState extends State<CoffeeStoryBoard>{
    );
   }
   pageChangeCallback(int lpage) {
-    print(lpage);
+
     setState(() {
       page = lpage;
     });
   }
 
   updateTypeCallback(UpdateType updateType) {
-    print(updateType);
+
   }
 }
