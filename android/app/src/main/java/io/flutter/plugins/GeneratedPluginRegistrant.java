@@ -1,6 +1,7 @@
 package io.flutter.plugins;
 
 import io.flutter.plugin.common.PluginRegistry;
+import com.ggichure.github.hexcolor.HexcolorPlugin;
 
 /**
  * Generated file. Do not edit.
@@ -10,6 +11,7 @@ public final class GeneratedPluginRegistrant {
     if (alreadyRegisteredWith(registry)) {
       return;
     }
+    HexcolorPlugin.registerWith(registry.registrarFor("com.ggichure.github.hexcolor.HexcolorPlugin"));
   }
 
   private static boolean alreadyRegisteredWith(PluginRegistry registry) {

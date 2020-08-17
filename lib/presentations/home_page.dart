@@ -1,10 +1,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/customIcons.dart';
 import 'package:flutter_story_app_concept/data.dart';
 import 'package:flutter_story_app_concept/detail_page.dart';
+import 'package:flutter_story_app_concept/presentations/drawer.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -28,78 +31,23 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       drawer: Drawer(
-          child: Container(
-            color: Colors.black.withOpacity(0.9),
-            padding: EdgeInsets.only(left: 20, bottom: 30),
-            child: ListView(
-              children: <Widget>[
-                SizedBox(height: 30),
-                GestureDetector(onTap: (){
-
-                },
-                  child: Text("Trang chủ",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontFamily: "Calibre-Semibold",
-                      )),
-                ),
-                SizedBox(height: 15),
-                GestureDetector(onTap: (){
-
-                },
-                  child: Text("Tin tức",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontFamily: "Calibre-Semibold",
-                      )),
-                ),
-                SizedBox(height: 15),
-                GestureDetector(onTap: (){
-                  Navigator.of(context).pushNamed('coffee_story');
-                },
-                  child: Text("Câu chuyện từ nông trại",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontFamily: "Calibre-Semibold",
-                      )),
-                ),
-                SizedBox(height: 15),
-                GestureDetector(onTap: (){
-
-                },
-                  child: Text("Thưởng thức cà phê",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontFamily: "Calibre-Semibold",
-                      )),
-                ),
-                SizedBox(height: 15),
-                GestureDetector(onTap: (){
-
-                },
-                  child: Text("Đề xuất quán theo quận",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontFamily: "Calibre-Semibold",
-                      )),
-                )
-              ],
-            ),
-          )),
-      backgroundColor: Colors.transparent,
+          child: CustomDrawer()),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: ColorApp.colorYellow,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search,size: 30),
+            color: ColorApp.colorBrown,
+            onPressed: (){},
+          ),
+        ],
         leading: Builder(
             builder: (context) => IconButton(
               padding: EdgeInsets.only(left: 12),
               icon: Icon(
                 CustomIcons.menu,
-                color: Colors.white,
+                color: ColorApp.colorBrown,
                 size: 30.0,
               ),
               onPressed: () {
@@ -108,43 +56,29 @@ class _HomePageState extends State<HomePage> {
             )),
       ),
       body: SingleChildScrollView(
-        child: Column(
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 12.0, right: 12.0, top: 30.0, bottom: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-//                    IconButton(
-//                      icon: Icon(
-//                        CustomIcons.menu,
-//                        color: Colors.white,
-//                        size: 30.0,
-//                      ),
-//                      onPressed: () {
-//                       Scaffold.of(context).openDrawer();
-//                      },
-//                    ),
-//                    IconButton(
-//                      icon: Icon(
-//                        Icons.search,
-//                        color: Colors.white,
-//                        size: 30.0,
-//                      ),
-//                      onPressed: () {},
-//                    )
-                ],
-              ),
+            Padding(padding: EdgeInsets.fromLTRB(3, 10, 10, 0),
+              child:
+                Row(children: <Widget> [
+                  Image.asset("assets/home_logo.png",width: 80,height: 50,scale: 1.5),
+                  Text("Nhà cà phê holic",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: "Sriracha",
+                        letterSpacing: 1.0,
+                      ))]),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text("Home of Coffeeholic",
+                  Text("Khám phá",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: ColorApp.colorCoffee,
                         fontSize: 28.0,
                         fontFamily: "Calibre-Semibold",
                         letterSpacing: 1.0,
@@ -153,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icon(
                       CustomIcons.option,
                       size: 12.0,
-                      color: Colors.white,
+                      color: ColorApp.colorCoffee,
                     ),
                     onPressed: () {},
                   )
@@ -161,27 +95,27 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20.0),
+              padding: EdgeInsets.only(left: 20.0),
               child: Row(
                 children: <Widget>[
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFFff6e6e),
+                      color: ColorApp.colorYellow,
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Center(
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 22.0, vertical: 6.0),
-                        child: Text("Top Views",
-                            style: TextStyle(color: Colors.white)),
+                        child: Text("Xem nhiều",
+                            style: TextStyle(color: Colors.black)),
                       ),
                     ),
                   ),
                   SizedBox(
                     width: 15.0,
                   ),
-                  Text("Blog", style: TextStyle(color: Colors.blueAccent))
+                  Text("Bài viết ", style: TextStyle(color: Colors.black))
                 ],
               ),
             ),
@@ -196,7 +130,9 @@ class _HomePageState extends State<HomePage> {
                     layout: SwiperLayout.STACK,
                     pagination: SwiperPagination(
                       builder:
-                      DotSwiperPaginationBuilder(activeSize: 20, space: 8),
+                      DotSwiperPaginationBuilder(color: ColorApp.colorYellow.withOpacity(0.7),
+                          activeColor: ColorApp.colorCoffee,
+                          activeSize: 20, space: 8),
                     ),
                     itemBuilder: (context, index) {
                       return InkWell(
@@ -211,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                             );
                           },
                           child: Stack(children: <Widget>[
-//                        SizedBox(height: 10),
+
                             CardItem(data[index])
                           ]));
                     })),
@@ -220,10 +156,10 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text("Favourite",
+                  Text("Yêu thích",
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 46.0,
+                        color: ColorApp.colorCoffee,
+                        fontSize: 28.0,
                         fontFamily: "Calibre-Semibold",
                         letterSpacing: 1.0,
                       )),
@@ -231,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icon(
                       CustomIcons.option,
                       size: 12.0,
-                      color: Colors.white,
+                      color: ColorApp.colorCoffee,
                     ),
                     onPressed: () {},
                   )
@@ -244,22 +180,22 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.blueAccent,
+                      color: ColorApp.colorYellow,
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Center(
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 22.0, vertical: 6.0),
-                        child: Text("Latest",
-                            style: TextStyle(color: Colors.white)),
+                        child: Text("Gần đây",
+                            style: TextStyle(color: Colors.black)),
                       ),
                     ),
                   ),
                   SizedBox(
                     width: 15.0,
                   ),
-                  Text("9+ Stories", style: TextStyle(color: Colors.blueAccent))
+                  Text("Đã lưu", style: TextStyle(color: Colors.black))
                 ],
               ),
             ),
@@ -361,16 +297,16 @@ class CardScrollWidget extends StatelessWidget {
                               height: 10.0,
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(
+                              padding: EdgeInsets.only(
                                   left: 12.0, bottom: 12.0),
                               child: Container(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 22.0, vertical: 6.0),
                                 decoration: BoxDecoration(
-                                    color: Colors.blueAccent,
+                                    color: ColorApp.colorYellow,
                                     borderRadius: BorderRadius.circular(20.0)),
-                                child: Text("Read more",
-                                    style: TextStyle(color: Colors.white)),
+                                child: Text("Chi tiết",
+                                    style: TextStyle(color: Colors.black)),
                               ),
                             )
                           ],
@@ -435,10 +371,10 @@ class CardItem extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             horizontal: 22.0, vertical: 6.0),
                         decoration: BoxDecoration(
-                            color: Colors.blueAccent,
+                            color: ColorApp.colorYellow,
                             borderRadius: BorderRadius.circular(20.0)),
-                        child: Text("Read more",
-                            style: TextStyle(color: Colors.white)),
+                        child: Text("Chi tiết",
+                            style: TextStyle(color: Colors.black)),
                       ),
                     )
                   ],

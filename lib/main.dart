@@ -4,6 +4,7 @@ import 'package:flutter_story_app_concept/coffee_story.dart';
 import 'package:flutter_story_app_concept/data/coffee_story.dart';
 import 'package:flutter_story_app_concept/detail_page.dart';
 import 'package:flutter_story_app_concept/presentations/home_page.dart';
+import 'package:flutter_story_app_concept/presentations/splash_page.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'customIcons.dart';
 import 'data.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       //initialRoute: RoutePaths.PreViewSelectServices,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Router.generateRoute,
-      home: CoffeeStoryBoard(),
+      home: SplashPage(),
     );
   }
 }
