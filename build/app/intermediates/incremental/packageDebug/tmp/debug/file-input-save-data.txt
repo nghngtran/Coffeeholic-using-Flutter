@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Aug 14 21:08:54 ICT 2020
+#Fri Aug 14 21:36:22 ICT 2020
 56.path=flutter_assets/assets/image_8.jpg
 5.base=E\:\\Coffeeholic-using-Flutter\\Coffeeholic-using-Flutter\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 42.base=E\:\\Coffeeholic-using-Flutter\\Coffeeholic-using-Flutter\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0

@@ -6,6 +6,7 @@ import 'package:flutter_story_app_concept/data/coffee_story.dart';
 import 'package:flutter_story_app_concept/detail_page.dart';
 import 'package:flutter_story_app_concept/presentations/home_page.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'coffee_knowledge_detail.dart';
 import 'customIcons.dart';
 import 'data.dart';
 import 'dart:math';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       //initialRoute: RoutePaths.PreViewSelectServices,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Router.generateRoute,
-      home: CoffeeKnowledgePage(),
+      home: CoffeeKnowledgeDetailPage(),
     );
   }
 }

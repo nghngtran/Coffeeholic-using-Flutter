@@ -32,9 +32,11 @@ class CoffeeStoryPage extends StatelessWidget{
 
   }
 }
+
 class CoffeeStoryBoard extends StatefulWidget {
   CoffeeStoryBoardState createState() => CoffeeStoryBoardState();
 }
+
 Container _container(BuildContext context, CoffeeStory coffeeStory)
 {
   double h = MediaQuery.of(context).size.height/100;
