@@ -19,7 +19,7 @@ class CustomDrawer extends  StatelessWidget{
               children: [
                 Container(width: 65,height:80,child: Image.asset("assets/home.png",fit: BoxFit.fitHeight)),
                 SizedBox(width: 5),
-                Text("Nhà coffeeholic",style: TextStyle(color: Colors.black,fontSize: 28,fontFamily: "Dancing Script",fontWeight: FontWeight.bold,letterSpacing: 1.2),)
+                Text("Nhà coffeeholic",style: TextStyle(color: Colors.black,fontSize: 24,fontFamily: "Dancing Script",fontWeight: FontWeight.bold,letterSpacing: 1.2),)
               ],
             ),
           ),
@@ -30,7 +30,7 @@ class CustomDrawer extends  StatelessWidget{
                 children: [
               SizedBox(height: 10),
           GestureDetector(onTap: (){
-            Navigator.of(context).pushNamed("/");
+            Navigator.of(context).pushNamed("home");
           },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,

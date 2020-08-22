@@ -50,22 +50,25 @@ class DetailPageState extends State<DetailPage> {
                             ),
                             textAlign: TextAlign.left,
                           ),
+                    SizedBox(height: 10),
                     Wrap(
                       children:
-                      [Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      [Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                             mainAxisSize: MainAxisSize.max,
                             children:[
-                              Text(
-                              widget.coffeeInfo.position,
-                              style: TextStyle(
-                                fontFamily: 'Avenir',
-                                fontSize: 18,
-                                color: primaryTextColor,
-                                fontWeight: FontWeight.w300,
-                              ),
-                              textAlign: TextAlign.left,
+                              Expanded(flex: 8,
+                                child: Text(
+                                widget.coffeeInfo.position,
+                                style: TextStyle(
+                                  fontFamily: 'Avenir',
+                                  fontSize: 18,
+                                  color: primaryTextColor,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                                textAlign: TextAlign.left,
                             ),
-                              SizedBox(width: 5),
+                              ),
+
                               Expanded(
                                 child: GestureDetector(onTap: (){
                                   setState(() {
@@ -82,7 +85,7 @@ class DetailPageState extends State<DetailPage> {
                           SizedBox(height: 32),
                           Text(
                             widget.coffeeInfo.description ?? '',
-                            maxLines: 20,
+                            maxLines: 100,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontFamily: 'Avenir',
