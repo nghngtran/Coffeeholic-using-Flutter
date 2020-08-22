@@ -108,7 +108,7 @@ class CustomDrawer extends  StatelessWidget{
               children: [
                 Image.asset("assets/icon_shop.png"),
                 SizedBox(width: 5,),
-                Text("Đề xuất quán theo ",
+                Text("Đề xuất quán theo quận ",
                     style: TextStyle(
                       color: ColorApp.colorCoffee,
                       fontSize: 18.0,
