@@ -29,7 +29,7 @@ class _SplashPageState extends State<SplashPage> {
           color: ColorApp.colorYellow,
         ),
         child: Center(
-          child: Image.asset("assets/home.png",width: 250,height: 200),
+          child: Image.asset("assets/home.png",width: 700,height: 200),
         ),
       ),
     );
