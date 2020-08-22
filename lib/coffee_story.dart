@@ -163,7 +163,8 @@ class CoffeeStoryBoardState extends State<CoffeeStoryBoard>{
     Container(margin: EdgeInsets.fromLTRB(w*80, h*10, w*2, h),width: 80,height: 20,
     child: GestureDetector(onTap:(){
       Navigator.of(context).pushNamed("home");
-    },child: Center(child: Text("Kết thúc",style: TextStyle(color:Colors.white,fontSize: 18,fontFamily: 'Dancing Script')))),
+//    Navigator.of(context).pop();
+    },child: Center(child: Text("Kết thúc",style: TextStyle(color:Colors.white,fontSize: 16, fontFamily: 'Avenir',)))),
     ),
           BackdropFilter(filter: ImageFilter.blur(sigmaX: 0,sigmaY: 0),
             child: Wrap(

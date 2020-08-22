@@ -8,21 +8,29 @@ class CustomDrawer extends  StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.fromLTRB(20, 50, 10, 20),
+
       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Image.asset("assets/mug.png",width: 80,height: 50),
-              SizedBox(width: 5),
-              Text("Coffee Holic",style: TextStyle(color: ColorApp.colorYellow,fontSize: 28,fontFamily: "Dancing Script",fontWeight: FontWeight.bold,letterSpacing: 1.2),)
-            ],
+          Container(color: ColorApp.colorYellow,
+            padding: EdgeInsets.fromLTRB(20, 40, 0, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(width: 65,height:80,child: Image.asset("assets/home.png",fit: BoxFit.fitHeight)),
+                SizedBox(width: 5),
+                Text("Nhà coffeeholic",style: TextStyle(color: Colors.black,fontSize: 28,fontFamily: "Dancing Script",fontWeight: FontWeight.bold,letterSpacing: 1.2),)
+              ],
+            ),
           ),
-          Divider(color: ColorApp.colorBrown,thickness: 1.0),
-          SizedBox(height: 10),
+
+          Padding(
+              padding: EdgeInsets.fromLTRB(20, 10, 10, 20),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+              SizedBox(height: 10),
           GestureDetector(onTap: (){
+            Navigator.of(context).pushNamed("/");
           },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -31,7 +39,26 @@ class CustomDrawer extends  StatelessWidget{
                 Text("Trang chủ",
                     style: TextStyle(
                       color: ColorApp.colorCoffee,
-                      fontSize: 20.0,
+                      fontSize: 18.0,
+                    )),
+              ],
+            ),
+          ),
+          SizedBox(height: 20),
+          GestureDetector(onTap: (){
+            Navigator.of(context).pushNamed("feed");
+          },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset("assets/icon_drink.png"),
+                SizedBox(width: 5,),
+                Text("Khám phá bảng tin",
+                    style: TextStyle(
+                      color: ColorApp.colorCoffee,
+                      fontSize: 18.0,
+//                      fontFamily: "Calibre-Semibold",
                     )),
               ],
             ),
@@ -49,7 +76,7 @@ class CustomDrawer extends  StatelessWidget{
                 Text("Câu chuyện cà phê",
                     style: TextStyle(
                       color: ColorApp.colorCoffee,
-                      fontSize: 20.0,
+                      fontSize: 18.0,
 //                      fontFamily: "Calibre-Semibold",
                     )),
               ],
@@ -66,7 +93,7 @@ class CustomDrawer extends  StatelessWidget{
                 Text("Thường thức cà phê",
                     style: TextStyle(
                       color: ColorApp.colorCoffee,
-                      fontSize: 20.0,
+                      fontSize: 18.0,
 //                      fontFamily: "Calibre-Semibold",
                     )),
               ],
@@ -81,10 +108,10 @@ class CustomDrawer extends  StatelessWidget{
               children: [
                 Image.asset("assets/icon_shop.png"),
                 SizedBox(width: 5,),
-                Text("Đề xuất quán",
+                Text("Đề xuất quán theo ",
                     style: TextStyle(
                       color: ColorApp.colorCoffee,
-                      fontSize: 20.0,
+                      fontSize: 18.0,
 //                      fontFamily: "Calibre-Semibold",
                     )),
               ],
@@ -121,35 +148,40 @@ class CustomDrawer extends  StatelessWidget{
                 Text("Cài đặt",
                     style: TextStyle(
                       color: ColorApp.colorCoffee,
-                      fontSize: 20.0,
+                      fontSize: 18.0,
                     )),
               ],
             ),
           ),
-          SizedBox(height: 55),
+          SizedBox(height: 30),
           GestureDetector(onTap: (){
 
-          },
+          },child:
+          Container(margin: EdgeInsets.only(left: 5),
             child: Text("Hỗ trợ & Phản hồi",
-                style: TextStyle(
-                  color: ColorApp.colorCoffee,
-                  fontSize: 18.0,
+                    style: TextStyle(
+                      color: ColorApp.colorCoffee,
+                      fontSize: 16,
 //                  fontFamily: "Calibre-Semibold",
-                )),
+                    )),
           ),
+            ),
+
           SizedBox(height: 15),
           GestureDetector(onTap: (){
 
           },
-            child: Text("Thông tin về Coffeeholic",
-                style: TextStyle(
-                  color: ColorApp.colorCoffee,
-                  fontSize: 18.0,
+            child: Container(margin: EdgeInsets.only(left: 5),
+              child: Text("Thông tin về Coffeeholic",
+                  style: TextStyle(
+                    color: ColorApp.colorCoffee,
+                    fontSize: 16.0,
 //                  fontFamily: "Calibre-Semibold",
-                )),
+                  )),
+            ),
           ),
         ],
       ),
-    );
+    )]));
   }
 }

@@ -13,22 +13,33 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => new _HomePageState();
 }
-
+enum Discovery { XemNhieu, BaiViet}
+enum Favourite { Ganday, Daluu}
 var cardAspectRatio = 12.0 / 16.0;
 var widgetAspectRatio = cardAspectRatio * 1.2;
 
 class _HomePageState extends State<HomePage> {
   var currentPage = data.length - 1.0;
-
+  Discovery typeDis;
+  Favourite typeFavor;
+  void initState(){
+    super.initState();
+    setState(() {
+      typeDis = Discovery.XemNhieu;
+      typeFavor = Favourite.Ganday;
+    });
+  }
   @override
   Widget build(BuildContext context) {
+    favoriteList.add(data[1]);
+    favoriteList.add(data[3]);
+    favoriteList.add(data[4]);
     PageController controller = PageController(initialPage: data.length - 1);
     controller.addListener(() {
       setState(() {
         currentPage = controller.page;
       });
     });
-
     return Scaffold(
       drawer: Drawer(
           child: CustomDrawer()),
@@ -38,7 +49,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             icon: Icon(Icons.search,size: 30),
-            color: ColorApp.colorBrown,
+            color: Colors.black,
             onPressed: (){},
           ),
         ],
@@ -47,7 +58,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(left: 12),
               icon: Icon(
                 CustomIcons.menu,
-                color: ColorApp.colorBrown,
+                color: Colors.black,
                 size: 30.0,
               ),
               onPressed: () {
@@ -57,19 +68,37 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Padding(padding: EdgeInsets.fromLTRB(3, 10, 10, 0),
+            Padding(padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
               child:
-                Row(children: <Widget> [
-                  Image.asset("assets/home_logo.png",width: 80,height: 50,scale: 1.5),
-                  Text("Nhà cà phê holic",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: "Sriracha",
-                        letterSpacing: 1.0,
-                      ))]),
+                Row(mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget> [
+                      Container(width: 60,height:90,
+                          margin: EdgeInsets.only(left: 20),child: Image.asset("assets/home.png",fit: BoxFit.fitHeight)),
+                      Expanded(
+                        child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children:[
+                            Text("Chào mừng bạn đến với @nhacuacoffeeholic ,",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: "Dancing Script",
+                            letterSpacing: 0.5,
+                          )),
+                            Text("cùng đi cà phê với mình nha !",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: "Dancing Script",
+                                  letterSpacing: 0.5,
+                                )),
+                        ]),
+                      )]),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
@@ -81,7 +110,6 @@ class _HomePageState extends State<HomePage> {
                         color: ColorApp.colorCoffee,
                         fontSize: 28.0,
                         fontFamily: "Calibre-Semibold",
-                        letterSpacing: 1.0,
                       )),
                   IconButton(
                     icon: Icon(
@@ -89,7 +117,9 @@ class _HomePageState extends State<HomePage> {
                       size: 12.0,
                       color: ColorApp.colorCoffee,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('feed');
+                    },
                   )
                 ],
               ),
@@ -98,24 +128,54 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(left: 20.0),
               child: Row(
                 children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                      color: ColorApp.colorYellow,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 22.0, vertical: 6.0),
-                        child: Text("Xem nhiều",
-                            style: TextStyle(color: Colors.black)),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        typeDis = Discovery.XemNhieu;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: typeDis == Discovery.XemNhieu ? ColorApp.colorYellow : Colors.transparent,
+                        borderRadius: BorderRadius.circular(20.0),
+                        border: Border.all(color: typeDis == Discovery.XemNhieu ? ColorApp.colorYellow : ColorApp.colorCoffee.withOpacity(0.3))
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 22.0, vertical: 6.0),
+                          child: Text("Xem nhiều",
+                              style: TextStyle(color: Colors.black)),
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(
                     width: 15.0,
                   ),
-                  Text("Bài viết ", style: TextStyle(color: Colors.black))
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        typeDis = Discovery.BaiViet;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: typeDis == Discovery.BaiViet ? ColorApp.colorYellow : Colors.transparent,
+                        borderRadius: BorderRadius.circular(20.0),
+                          border: Border.all(color: typeDis == Discovery.BaiViet ? ColorApp.colorYellow : ColorApp.colorCoffee.withOpacity(0.3)
+                      ),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 22.0, vertical: 6.0),
+                          child: Text("Bảng tin",
+                              style: TextStyle(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -125,7 +185,7 @@ class _HomePageState extends State<HomePage> {
                 height: 500,
                 padding: const EdgeInsets.only(left: 20),
                 child: Swiper(
-                    itemCount: data.length,
+                    itemCount: 10,
                     itemWidth: MediaQuery.of(context).size.width - 2 * 55,
                     layout: SwiperLayout.STACK,
                     pagination: SwiperPagination(
@@ -147,7 +207,6 @@ class _HomePageState extends State<HomePage> {
                             );
                           },
                           child: Stack(children: <Widget>[
-
                             CardItem(data[index])
                           ]));
                     })),
@@ -161,7 +220,6 @@ class _HomePageState extends State<HomePage> {
                         color: ColorApp.colorCoffee,
                         fontSize: 28.0,
                         fontFamily: "Calibre-Semibold",
-                        letterSpacing: 1.0,
                       )),
                   IconButton(
                     icon: Icon(
@@ -178,43 +236,91 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(left: 20.0),
               child: Row(
                 children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                      color: ColorApp.colorYellow,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 22.0, vertical: 6.0),
-                        child: Text("Gần đây",
-                            style: TextStyle(color: Colors.black)),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        typeFavor = Favourite.Ganday;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: typeFavor== Favourite.Ganday ? ColorApp.colorYellow : Colors.transparent,
+                        borderRadius: BorderRadius.circular(20.0),
+                        border: Border.all(color: typeFavor== Favourite.Ganday ? ColorApp.colorYellow : ColorApp.colorCoffee.withOpacity(0.3)
+                        ),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 22.0, vertical: 6.0),
+                          child: Text("Gần đây",
+                              style: TextStyle(color: Colors.black)),
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(
                     width: 15.0,
                   ),
-                  Text("Đã lưu", style: TextStyle(color: Colors.black))
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        typeFavor = Favourite.Daluu;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: typeFavor== Favourite.Daluu ? ColorApp.colorYellow : Colors.transparent,
+                        borderRadius: BorderRadius.circular(20.0),
+                        border: Border.all(color: typeFavor== Favourite.Daluu ? ColorApp.colorYellow : ColorApp.colorCoffee.withOpacity(0.3)
+                        ),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 22.0, vertical: 6.0),
+                          child: Text("Đã lưu",
+                              style: TextStyle(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
             SizedBox(
               height: 20.0,
             ),
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(left: 18.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
-                    child: Image.asset("assets/image_02.jpg",
-                        width: 296.0, height: 222.0),
-                  ),
-                )
-              ],
-            )
-          ],
+//            Row(
+//              children: <Widget>[
+//                Padding(
+//                  padding: EdgeInsets.only(left: 18.0),
+//                  child: ClipRRect(
+//                    borderRadius: BorderRadius.circular(20.0),
+//                    child: Image.asset("assets/image_02.jpg",
+//                        width: 296.0, height: 222.0),
+//                  ),
+//                )
+//              ],
+
+//            )
+        favoriteList.length == 0  ? Container(margin: EdgeInsets.fromLTRB(50, 50, 10, 100),
+          child: Text("Bảng tin yêu thích của bạn hiện đang trống. Lưu lại bài viết yêu thích, bạn nhé.",style:
+    TextStyle(color: Colors.black.withOpacity(0.7),fontSize: 16,fontStyle: FontStyle.italic)),
+        ):
+        Container(
+                margin: EdgeInsets.fromLTRB(0, 10, 0, 30),
+                width: MediaQuery.of(context).size.width,
+                height: 250,
+                padding: const EdgeInsets.only(left: 20),
+                child: ListView.separated(scrollDirection: Axis.horizontal,
+                  itemCount: favoriteList.length,itemBuilder: (context,index){
+                  final item = favoriteList[index];
+                  return FavouriteCardItem(item);
+                },separatorBuilder: (context,index){
+                  return Padding(padding: EdgeInsets.fromLTRB(5,0,0,0));
+                  },)
+        )  ],
         ),
       ),
     );
@@ -384,6 +490,142 @@ class CardItem extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+class FavouriteCardItem extends StatelessWidget {
+  CoffeeInfo coffeeInfo;
+  FavouriteCardItem(CoffeeInfo _coffee) : coffeeInfo = _coffee;
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16.0),
+      child: Container(
+        height: 200,
+        width: 200,
+        decoration: BoxDecoration(color: Colors.white, boxShadow: [
+          BoxShadow(
+              color: Colors.black12, offset: Offset(3.0, 6.0), blurRadius: 10.0)
+        ]),
+        child: AspectRatio(
+          aspectRatio: cardAspectRatio,
+          child: Stack(
+            fit: StackFit.expand,
+            children: <Widget>[
+              Image.asset(coffeeInfo.iconImage, fit: BoxFit.cover),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding:
+                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      child: Text(coffeeInfo.name,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                              fontFamily: "SF-Pro-Text-Regular",
+                              fontWeight: FontWeight.w600)),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+class FavouriteCardScrollWidget extends StatelessWidget {
+  var currentPage;
+  var padding = 20.0;
+  var verticalInset = 20.0;
+
+  FavouriteCardScrollWidget(this.currentPage);
+
+  @override
+  Widget build(BuildContext context) {
+    
+    return AspectRatio(
+      aspectRatio: widgetAspectRatio,
+      child: LayoutBuilder(builder: (context, contraints) {
+        var width = contraints.maxWidth;
+        var height = contraints.maxHeight;
+
+        var safeWidth = width - 2 * padding;
+        var safeHeight = height - 2 * padding;
+
+        var heightOfPrimaryCard = safeHeight;
+        var widthOfPrimaryCard = heightOfPrimaryCard * cardAspectRatio;
+
+        var primaryCardLeft = safeWidth - widthOfPrimaryCard;
+        var horizontalInset = primaryCardLeft / 2;
+
+        List<Widget> cardListFavourite = new List();
+
+        for (var i = 0; i < favoriteList.length; i++) {
+          var delta = i - currentPage;
+          bool isOnRight = delta > 0;
+
+          var start = padding +
+              max(
+                  primaryCardLeft -
+                      horizontalInset * -delta * (isOnRight ? 15 : 1),
+                  0.0);
+
+          var cardItem = Positioned.directional(
+            top: padding + verticalInset * max(-delta, 0.0),
+            bottom: padding + verticalInset * max(-delta, 0.0),
+            start: start,
+            textDirection: TextDirection.rtl,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16.0),
+              child: Container(
+                decoration: BoxDecoration(color: Colors.white, boxShadow: [
+                  BoxShadow(
+                      color: Colors.black12,
+                      offset: Offset(3.0, 6.0),
+                      blurRadius: 10.0)
+                ]),
+                child: AspectRatio(
+                  aspectRatio: cardAspectRatio,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: <Widget>[
+                      Image.asset(favoriteList[i].iconImage, fit: BoxFit.cover),
+                      Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16.0, vertical: 8.0),
+                              child: Text(favoriteList[i].name,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 22.0,
+                                      fontFamily: "SF-Pro-Text-Regular",
+                                      fontWeight: FontWeight.w600)),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+          cardListFavourite.add(cardItem);
+        }
+        return Stack(
+          children: cardListFavourite,
+        );
+      }),
     );
   }
 }

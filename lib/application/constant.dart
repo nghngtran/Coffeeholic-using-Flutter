@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 
 class RoutePaths {
-  static const String Home = '/';
+  static const String Home = 'home';
   static const String CoffeeStory = 'coffee_story';
+  static const String Feed = 'feed';
+  static const String SplashScreen ='splash_screen';
 }
 
 class ColorApp{

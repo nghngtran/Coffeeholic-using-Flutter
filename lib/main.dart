@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/application/router.dart';
 import 'package:flutter_story_app_concept/presentations/splash_page.dart';
 
@@ -11,12 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
-      theme: ThemeData(
-      ),
-      //initialRoute: RoutePaths.PreViewSelectServices,
+      theme: ThemeData(),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Router.generateRoute,
-      home: SplashPage(),
+      initialRoute: RoutePaths.SplashScreen,
     );
   }
 }
