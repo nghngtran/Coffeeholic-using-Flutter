@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       //initialRoute: RoutePaths.PreViewSelectServices,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Router.generateRoute,
-      home: CoffeeKnowledgeDetailPage(),
+      home: CoffeeKnowledgePage(),
     );
   }
 }

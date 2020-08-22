@@ -17,14 +17,12 @@ class CoffeeStoryPage extends StatelessWidget{
         Material(
           child: Container(
 //            width: w*100,height: h*100,
-               decoration: BoxDecoration(image: DecorationImage(image:
-          AssetImage(coffeeStory.imgUrl),fit: BoxFit.fitHeight)),
-          child:
-          BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
-            child: Wrap(
-              children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
+               decoration: BoxDecoration(image: DecorationImage(image: AssetImage(coffeeStory.imgUrl),fit: BoxFit.fitHeight)),
+              child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
+                    child: Wrap(
+                        children:<Widget>[ Container(padding: EdgeInsets.fromLTRB(w*3, h*1.5, w*3, h*1.5),margin: EdgeInsets.fromLTRB(w*40, h*70, w*2, h),
 //                color: Colors.black.withOpacity(0.8),
-                child: Text(coffeeStory.subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
+                            child: Text(coffeeStory.subtitle,style: TextStyle(fontSize: 22,color: Colors.white,fontFamily: 'Dancing Script')),
     ),
             ]),
           )),
