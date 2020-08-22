@@ -103,7 +103,7 @@ class DetailPageState extends State<DetailPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 32.0),
                     child: Text(
-                      'Gallery',
+                      'Thư viện ảnh',
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 25,
