@@ -6,6 +6,7 @@ class RoutePaths {
   static const String CoffeeStory = 'coffee_story';
   static const String Feed = 'feed';
   static const String SplashScreen ='splash_screen';
+  static const String CoffeShop = 'coffee_shop';
 }
 
 class ColorApp{

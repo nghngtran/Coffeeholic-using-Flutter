@@ -1,9 +1,11 @@
 class Drink {
   final String name;
   final String imgUrl;
+  final String price;
   Drink({
     this.name,
-    this.imgUrl
+    this.imgUrl,
+    this.price
 });
 }
 
@@ -66,20 +68,24 @@ List<Comment> commentDummy = [
 
 List<Drink> drinkDummyCaztus = [
   Drink(
-    name: "Đậu Đỏ Thoát Ế",
-    imgUrl: "https://images.foody.vn/res/g4/35338/s750x750/c1ddcdc1-7fd0-4b7b-b17e-bde33cb6-b1ab8189-200823210518.jpeg",
+      name: "Đậu Đỏ Thoát Ế",
+      imgUrl: "https://images.foody.vn/res/g4/35338/s750x750/c1ddcdc1-7fd0-4b7b-b17e-bde33cb6-b1ab8189-200823210518.jpeg",
+      price: "35.000đ"
   ),
   Drink(
-    name: "Mr. Oreo",
-    imgUrl: "https://images.foody.vn/res/g4/35338/s750x750/c7fff366-e2c0-4c76-b111-179423242c3f.jpg"
+      name: "Mr. Oreo",
+      imgUrl: "https://images.foody.vn/res/g4/35338/s750x750/c7fff366-e2c0-4c76-b111-179423242c3f.jpg",
+      price: "35.000đ"
   ),
   Drink(
-    name: "Caramel",
-    imgUrl: "https://images.foody.vn/res/g4/35338/s750x750/bdfa76f9-c981-46d7-ba8b-25be3ce3bcc7.jpg"
+      name: "Caramel",
+      imgUrl: "https://images.foody.vn/res/g4/35338/s750x750/bdfa76f9-c981-46d7-ba8b-25be3ce3bcc7.jpg",
+      price: "35.000đ"
   ),
   Drink(
-    name: "Creme bruleez",
-    imgUrl: "https://images.foody.vn/res/g4/35338/s750x750/cc6dfa97-d20b-42cf-9f1c-e53bcdc09b38.jpg"
+      name: "Creme bruleez",
+      imgUrl: "https://images.foody.vn/res/g4/35338/s750x750/cc6dfa97-d20b-42cf-9f1c-e53bcdc09b38.jpg",
+      price: "35.000đ"
   )
 ];
 
@@ -87,10 +93,12 @@ List<Drink> drinkDummyTCH = [
   Drink(
     name: "Cà phê sữa đá",
     imgUrl: "https://images.foody.vn/res/g9/89880/s80x80/201914113240-ca-phe-sua-da1.jpg",
+    price: "35.000đ"
   ),
   Drink(
       name: "Trà đào cam sả",
       imgUrl: "https://images.foody.vn/res/g9/89880/s80x80/20191411193-tra-dao-cam-sa.jpg",
+      price: "45.000đ"
   ),
   Drink(
       name: "Trà đen macchiato",
@@ -99,25 +107,30 @@ List<Drink> drinkDummyTCH = [
   Drink(
       name: "Americano đá",
       imgUrl: "https://images.foody.vn/res/g9/89880/s80x80/20191494821-2.jpg",
+      price: "55.000đ"
   )
 ];
 
 List<Drink> drinkDummyPhucLong = [
   Drink(
-    name: "Trà sữa Phúc Long (đá)",
-    imgUrl: "https://images.foody.vn/res/g5/48683/s120x120/201710211157-tra-sua-phuc-long.jpg",
+      name: "Trà sữa Phúc Long (đá)",
+      imgUrl: "https://images.foody.vn/res/g5/48683/s120x120/201710211157-tra-sua-phuc-long.jpg",
+      price: "55.000đ"
   ),
   Drink(
-    name: "Trà vải",
-    imgUrl: "https://images.foody.vn/res/g5/48683/s120x120/b4b9b3b9-ff70-4b00-1a6a-f9db5b6bd34a.jpg",
+      name: "Trà vải",
+      imgUrl: "https://images.foody.vn/res/g5/48683/s120x120/b4b9b3b9-ff70-4b00-1a6a-f9db5b6bd34a.jpg",
+      price: "35.000đ"
   ),
   Drink(
-    name: "Trà hoa hồng",
-    imgUrl: "https://images.foody.vn/res/g5/48683/s120x120/201812011547-foody-phuc-long-cafe-takeaway-tran-hung-dao-315-636519865737752073.jpg",
+      name: "Trà hoa hồng",
+      imgUrl: "https://images.foody.vn/res/g5/48683/s120x120/201812011547-foody-phuc-long-cafe-takeaway-tran-hung-dao-315-636519865737752073.jpg",
+      price: "45.000đ"
   ),
   Drink(
     name: "Caramel coffee (đá)",
     imgUrl: "https://images.foody.vn/res/g5/48683/s120x120/2018117171630-caramel-coffee.jpg",
+      price: "45.000đ"
   )
 ];
 
@@ -128,7 +141,7 @@ List<CoffeeShop> dummyCoffeeShop = [
     district: "Quận 1",
     position: "4A - 4B Võ Thị Sáu, P. Tân Định,  Quận 1, TP. HCM",
     description: "Vừa tròn mừng nhà Caztus 10 tuổi thì cũng là lúc phía Chi Nhánh Minh Khai đợt này vừa xây xong cùng một diện mạo lột xác làm bao bạn trẻ thích mắt lắm ôi trời, xinh thật sự.",
-    rating: 5,
+    rating: 4.2,
     menu: drinkDummyCaztus,
     images: [
       "https://images.foody.vn/res/g1/6545/s180x180/foody-caztus-coffee-vo-thi-sau-205-636070349057668867.jpg",
@@ -151,7 +164,7 @@ List<CoffeeShop> dummyCoffeeShop = [
     district: "Quận 7",
     position: "Tầng Trệt,  Tầng G Crescent Mall, 101 Tôn Dật Tiên, P. Tân Phú,  Quận 7, TP. HCM",
     description: "Trải qua hơn 50 năm chắt chiu tinh hoa từ những búp trà xanh và hạt cà phê thượng hạng cùng mong muốn mang lại cho khách hàng những trải nghiệm giá trị nhất khi thưởng thức, Phúc Long liên tục là thương hiệu tiên phong với nhiều ý tưởng sáng tạo đi đầu trong ngành trà và cà phê.",
-    rating: 4.7,
+    rating: 3.9,
     menu: drinkDummyPhucLong,
     images: [
       "https://images.foody.vn/res/g1/6644/s180x180/hinh-anh-coffee-tea-phuc-long-154840-634968077671112500.jpg",

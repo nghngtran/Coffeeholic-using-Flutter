@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import '../application/constant.dart';
-import '../data/CoffeeShop.dart';
-import 'coffee_shop_detail.dart';
+import 'package:flutter_story_app_concept/application/constant.dart';
+import 'package:flutter_story_app_concept/data/CoffeeShop.dart';
+import 'package:flutter_story_app_concept/presentations/coffee_shop_detail.dart';
+import '';
 
 class CoffeeSearchPage extends StatefulWidget {
   @override
