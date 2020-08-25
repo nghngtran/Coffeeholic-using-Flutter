@@ -166,7 +166,7 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                         SizedBox(height: 10),
                         Wrap(
                           children: [
-                            Container(width: w*100,height: h*widget.coffeeInfo.menu.length*12,
+                            Container(width: w*100,height: h*widget.coffeeInfo.menu.length*15,
                               child: ListView.separated(itemCount: widget.coffeeInfo.menu.length,separatorBuilder: (context,index){
                                 return Divider(color: ColorApp.colorBrown.withOpacity(0.8),thickness: 1.0);
                               },itemBuilder: (context,index){
@@ -230,19 +230,7 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
-                    child: Text(
-                      'Thư viện ảnh',
-                      style: TextStyle(
-                        fontFamily: 'Avenir',
-                        fontSize: 25,
-                        color: const Color(0xff47455f),
-                        fontWeight: FontWeight.w300,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
+
                   Container(
                     height: 250,
                     padding: const EdgeInsets.only(left: 32.0, top: 10.0),
@@ -309,7 +297,7 @@ class MenuDetail extends StatelessWidget{
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
                   Text(post.name,style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w600),),
                   SizedBox(height: 5),
-                  Text(post.price,style:TextStyle(color: Colors.black.withOpacity(0.9),fontSize: 12,fontWeight: FontWeight.w400)),
+                  Text(post.price,style:TextStyle(color: Colors.black.withOpacity(0.9),fontSize: 13,fontWeight: FontWeight.w400)),
                 ]),
               ),
               SizedBox(width: 5)

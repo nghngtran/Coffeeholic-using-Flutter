@@ -71,6 +71,7 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
     return Scaffold(
         appBar: AppBar(
           title: Container(
+            padding: EdgeInsets.fromLTRB(w*2, 0, w, 0),
             height: h*5.5,
             alignment: Alignment.center,
             decoration: new BoxDecoration(
@@ -105,18 +106,18 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   height: h*3.5,
                   margin: EdgeInsets.only(right: 6),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       color: ColorApp.colorBrown,
                       borderRadius: BorderRadius.circular(10)),
-                  child: new Theme(
+                  child:  Theme(
                       data: Theme.of(context).copyWith(
                           canvasColor: ColorApp.colorBrown
                       ),
-                      child: new DropdownButtonHideUnderline(
+                      child: DropdownButtonHideUnderline(
                         child: DropdownButton<String>(
                           value: dropdownValue,
                           icon: Icon(Icons.arrow_drop_down, color: Colors.white,),
@@ -144,9 +145,10 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
           bottom: TabBar(
             unselectedLabelColor: Colors.white70,
             labelColor: Colors.white,
+            labelStyle: TextStyle(fontSize: 16),
             indicatorColor: ColorApp.colorWhite,
             tabs: [
-              new Tab(text: "Xem gần đây",),
+              new Tab(text: "Xem gần đây"),
               new Tab(text: "Gần tôi",)
             ],
             controller: this._tabController,
@@ -202,14 +204,14 @@ class CoffeeShopRow extends StatelessWidget{
       },
       child: Wrap(
         children: [
-          Card(
-              color: ColorApp.colorWhite,
+          Card(elevation: 0.0,
+              color: Colors.white,
               child: Column(
                 children: [
-                  new Container(
+                  Container(
                       padding: const EdgeInsets.all(8.0),
                       child: Image.network(row.iconImg,)),
-                  new Container(
+                   Container(
                     padding: const EdgeInsets.all(10.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
