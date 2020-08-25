@@ -35,9 +35,9 @@ class CustomDrawer extends  StatelessWidget{
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-//                Image.asset("assets/home 1.png"),
+                Image.asset("assets/home 1.png",width: 25,height: 25),
 
-                SizedBox(width: 5,),
+                SizedBox(width: 5),
                 Text("Trang chủ",
                     style: TextStyle(
                       color: ColorApp.colorCoffee,
