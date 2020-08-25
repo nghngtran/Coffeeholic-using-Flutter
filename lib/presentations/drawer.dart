@@ -103,6 +103,7 @@ class CustomDrawer extends  StatelessWidget{
           ),
           SizedBox(height: 20),
           GestureDetector(onTap: (){
+            Navigator.of(context).pushNamed("coffee_shop");
           },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,

@@ -4,6 +4,7 @@ import 'package:flutter_story_app_concept/coffee_story.dart';
 import 'package:flutter_story_app_concept/presentations/home_page.dart';
 import 'package:flutter_story_app_concept/presentations/news.dart';
 import 'package:flutter_story_app_concept/presentations/splash_page.dart';
+import 'package:flutter_story_app_concept/presentations/coffee_search.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -20,6 +21,9 @@ class Router {
       case RoutePaths.Feed:
         return MaterialPageRoute(
             builder: (BuildContext context) => NewFeed());
+      case RoutePaths.CoffeShop:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => CoffeeSearchPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
