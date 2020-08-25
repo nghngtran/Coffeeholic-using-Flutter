@@ -85,7 +85,9 @@ class CustomDrawer extends  StatelessWidget{
             ),
           ),
           SizedBox(height: 20),
-          GestureDetector(onTap: (){},
+          GestureDetector(onTap: (){
+            Navigator.of(context).pushNamed("coffee_type");
+          },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
