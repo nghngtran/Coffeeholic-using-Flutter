@@ -12,11 +12,11 @@ class CoffeeKnowledge{
 List<CoffeeKnowledge> coffeeKnowledgeData = [
   CoffeeKnowledge("assets/CS1.jpg","Capuchino"),
   CoffeeKnowledge("assets/image_15.jpg","Cà phê Sữa"),
-  CoffeeKnowledge("assets/CS1.jpg","Cà phê Chồn"),
-  CoffeeKnowledge("assets/CS1.jpg","Cà phê Rang"),
-  CoffeeKnowledge("assets/CS1.jpg","Cà phê Đen"),
-  CoffeeKnowledge("assets/CS1.jpg","Bạc Xỉu"),
-  CoffeeKnowledge("assets/CS1.jpg","Cà phê Sữa Tươi"),
+  CoffeeKnowledge("assets/image_19.jpg","Cà phê Chồn"),
+  CoffeeKnowledge("assets/image_24.jpg","Cà phê Rang"),
+  CoffeeKnowledge("assets/image_31.jpg","Cà phê Đen"),
+  CoffeeKnowledge("assets/image_37.jpg","Bạc Xỉu"),
+  CoffeeKnowledge("assets/image_5.jpg","Cà phê Sữa Tươi"),
   CoffeeKnowledge("assets/CS1.jpg","Cà phê CaCao"),
   CoffeeKnowledge("assets/CS1.jpg","Cà phê Trứng"),
 ];
@@ -80,7 +80,7 @@ class CoffeeKnowledgeList extends StatelessWidget{
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(8.0)),
               image: DecorationImage(
-                  image: new AssetImage(coffeeKnowledgeData[0].imgUrl),
+                  image: new AssetImage(coffeeKnowledgeData[2].imgUrl),
                   fit: BoxFit.cover
               ),
             ),
@@ -100,7 +100,7 @@ class CoffeeKnowledgeList extends StatelessWidget{
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(8.0)),
               image: DecorationImage(
-                  image: new AssetImage(coffeeKnowledgeData[0].imgUrl),
+                  image: new AssetImage(coffeeKnowledgeData[3].imgUrl),
                   fit: BoxFit.cover
               ),
             ),
@@ -121,7 +121,7 @@ class CoffeeKnowledgeList extends StatelessWidget{
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(8.0)),
               image: DecorationImage(
-                  image: new AssetImage(coffeeKnowledgeData[0].imgUrl),
+                  image: new AssetImage(coffeeKnowledgeData[4].imgUrl),
                   fit: BoxFit.cover
               ),
             ),
@@ -142,7 +142,7 @@ class CoffeeKnowledgeList extends StatelessWidget{
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(8.0)),
               image: DecorationImage(
-                  image: new AssetImage(coffeeKnowledgeData[0].imgUrl),
+                  image: new AssetImage(coffeeKnowledgeData[5].imgUrl),
                   fit: BoxFit.cover
               ),
             ),
@@ -163,7 +163,7 @@ class CoffeeKnowledgeList extends StatelessWidget{
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(8.0)),
               image: DecorationImage(
-                  image: new AssetImage(coffeeKnowledgeData[0].imgUrl),
+                  image: new AssetImage(coffeeKnowledgeData[6].imgUrl),
                   fit: BoxFit.cover
               ),
             ),
@@ -195,6 +195,7 @@ class CoffeeKnowledgePage extends StatelessWidget{
         appBar: new AppBar(
           title: Text("Thường thức cà phê", style: TextStyle(fontSize: 20,color: Colors.black)),
           backgroundColor: ColorApp.colorYellow,
+          centerTitle: true,
           leading: new  IconButton(icon: Icon(Icons.arrow_back_ios, color: Colors.black), onPressed: (){
             Navigator.of(context).pop();
           },),

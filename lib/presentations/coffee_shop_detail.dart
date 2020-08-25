@@ -32,7 +32,8 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
 
     double w = MediaQuery.of(context).size.width/100;
     double h =  MediaQuery.of(context).size.height/100;
-    return Scaffold(
+    return Scaffold(appBar: AppBar(backgroundColor: ColorApp.colorYellow,
+      iconTheme: IconThemeData(color: Colors.black)),
       body: SafeArea(
         bottom: false,
         child: Stack(
@@ -40,8 +41,9 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
             SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  Container(margin: EdgeInsets.only(top:40),
+                  Container(margin: EdgeInsets.only(top:0),padding: EdgeInsets.all(0),
                     height: 250,width: MediaQuery.of(context).size.width,child:Image.network(widget.coffeeInfo.iconImg,fit: BoxFit.fitWidth),
                   ),
                   Padding(
@@ -255,12 +257,7 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                 ],
               ),
             ),
-            IconButton(
-              icon: Icon(Icons.arrow_back_ios),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
+
           ],
         ),
       ),

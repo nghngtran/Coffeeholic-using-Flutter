@@ -19,7 +19,7 @@ class NewFeed extends StatelessWidget{
       body:
       Container(width: w*100,height: h*data.length*12,
         child: ListView.separated(itemCount: data.length,separatorBuilder: (context,index){
-         return Divider(color: ColorApp.colorBrown.withOpacity(0.8),thickness: 1.0);
+         return Divider(color: ColorApp.colorBrown.withOpacity(0.5),thickness: 0.4);
         },itemBuilder: (context,index){
           final item = data[index];
           return PostDetail(item);
@@ -49,7 +49,7 @@ class PostDetail extends StatelessWidget{
          SizedBox(width: 10),
          Expanded(
            child: Column(crossAxisAlignment: CrossAxisAlignment.center,children: [
-             Text(post.name,style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w600),),
+             Text(post.name,style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w600),),
              SizedBox(height: 5),
              Text(post.description.substring(0,100) + "...",style:TextStyle(color: Colors.black.withOpacity(0.9),fontSize: 12,fontWeight: FontWeight.w400)),
            ]),

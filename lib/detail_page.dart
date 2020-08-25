@@ -32,7 +32,8 @@ class DetailPageState extends State<DetailPage> {
 //            create: (context) => favList,
 //        child: Consumer<FavoritePost>(
 //        builder: (context, favListView, child) {
-     return Scaffold(
+     return Scaffold(appBar: AppBar(backgroundColor: ColorApp.colorYellow,
+       iconTheme: IconThemeData(color: Colors.black),),
         body: SafeArea(
           bottom: false,
           child: Stack(
@@ -41,7 +42,7 @@ class DetailPageState extends State<DetailPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Container(margin: EdgeInsets.only(top:50),
+                    Container(margin: EdgeInsets.only(top:0),
                           height: 250,width: MediaQuery.of(context).size.width,child:Image.asset(widget.coffeeInfo.iconImage,fit: BoxFit.fitWidth),
                         ),
                     Padding(
@@ -169,12 +170,12 @@ class DetailPageState extends State<DetailPage> {
 //                textAlign: TextAlign.left,
 //              ),
 //            ),
-               IconButton(
-                  icon: Icon(Icons.arrow_back_ios),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
+//               IconButton(
+//                  icon: Icon(Icons.arrow_back_ios),
+//                  onPressed: () {
+//                    Navigator.pop(context);
+//                  },
+//                ),
             ],
           ),
         ),
