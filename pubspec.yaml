@@ -27,6 +27,7 @@ dependencies:
   flutter_swiper: ^1.1.6
   liquid_swipe: ^1.5.0
   path_provider: 1.6.1
+  provider: ^4.3.2+1
 dev_dependencies:
   flutter_test:
     sdk: flutter

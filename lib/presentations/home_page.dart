@@ -4,9 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/customIcons.dart';
 import 'package:flutter_story_app_concept/data.dart';
+import 'package:flutter_story_app_concept/data/favourite_post.dart';
 import 'package:flutter_story_app_concept/detail_page.dart';
 import 'package:flutter_story_app_concept/presentations/drawer.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:provider/provider.dart';
+
+import '../detail_page.dart';
+import '../detail_page.dart';
+import '../detail_page.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -22,6 +28,7 @@ class _HomePageState extends State<HomePage> {
   var currentPage = data.length - 1.0;
   Discovery typeDis;
   Favourite typeFavor;
+
   void initState(){
     super.initState();
     setState(() {
@@ -40,7 +47,12 @@ class _HomePageState extends State<HomePage> {
         currentPage = controller.page;
       });
     });
-    return Scaffold(
+    return ChangeNotifierProvider<FavoritePost>(
+      create: (context) => FavoritePost(),
+      child: Consumer<FavoritePost>(
+          builder: (context, favListView, child){
+            print(favListView.getList().length);
+            return Scaffold(
       drawer: Drawer(
           child: CustomDrawer()),
       backgroundColor: Colors.white,
@@ -291,39 +303,28 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 20.0,
             ),
-//            Row(
-//              children: <Widget>[
-//                Padding(
-//                  padding: EdgeInsets.only(left: 18.0),
-//                  child: ClipRRect(
-//                    borderRadius: BorderRadius.circular(20.0),
-//                    child: Image.asset("assets/image_02.jpg",
-//                        width: 296.0, height: 222.0),
-//                  ),
-//                )
-//              ],
 
-//            )
-        favoriteList.length == 0  ? Container(margin: EdgeInsets.fromLTRB(50, 50, 10, 100),
+
+    favoriteList.length == 0  ? Container(margin: EdgeInsets.fromLTRB(50, 50, 10, 100),
           child: Text("Bảng tin yêu thích của bạn hiện đang trống. Lưu lại bài viết yêu thích, bạn nhé.",style:
     TextStyle(color: Colors.black.withOpacity(0.7),fontSize: 16,fontStyle: FontStyle.italic)),
         ):
         Container(
-                margin: EdgeInsets.fromLTRB(0, 10, 0, 30),
-                width: MediaQuery.of(context).size.width,
-                height: 250,
-                padding: const EdgeInsets.only(left: 20),
-                child: ListView.separated(scrollDirection: Axis.horizontal,
-                  itemCount: favoriteList.length,itemBuilder: (context,index){
-                  final item = favoriteList[index];
-                  return FavouriteCardItem(item);
-                },separatorBuilder: (context,index){
-                  return Padding(padding: EdgeInsets.fromLTRB(5,0,0,0));
-                  },)
-        )  ],
-        ),
-      ),
-    );
+                  margin: EdgeInsets.fromLTRB(0, 10, 0, 30),
+                  width: MediaQuery.of(context).size.width,
+                  height: 250,
+                  padding: const EdgeInsets.only(left: 20),
+                  child: ListView.separated(scrollDirection: Axis.horizontal,
+                    itemCount: favoriteList.length,itemBuilder: (context,index){
+                    final item = favoriteList[index];
+                    return FavouriteCardItem(item);
+                  },separatorBuilder: (context,index){
+                    return Padding(padding: EdgeInsets.fromLTRB(5,0,0,0));
+                    }))
+            ])));}),
+
+
+      );
   }
 }
 

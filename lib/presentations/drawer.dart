@@ -35,6 +35,8 @@ class CustomDrawer extends  StatelessWidget{
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+//                Image.asset("assets/home 1.png"),
+
                 SizedBox(width: 5,),
                 Text("Trang chủ",
                     style: TextStyle(
@@ -52,7 +54,7 @@ class CustomDrawer extends  StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset("assets/icon_drink.png"),
+                Image.asset("assets/post 1.png"),
                 SizedBox(width: 5,),
                 Text("Khám phá bảng tin",
                     style: TextStyle(
@@ -71,7 +73,7 @@ class CustomDrawer extends  StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset("assets/icon_book.png"),
+                Image.asset("assets/book 1.png"),
                 SizedBox(width: 5,),
                 Text("Câu chuyện cà phê",
                     style: TextStyle(
@@ -88,7 +90,7 @@ class CustomDrawer extends  StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset("assets/icon_drink.png"),
+                Image.asset("assets/drink 1.png"),
                 SizedBox(width: 5,),
                 Text("Thường thức cà phê",
                     style: TextStyle(
@@ -106,7 +108,7 @@ class CustomDrawer extends  StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset("assets/icon_shop.png"),
+                Image.asset("assets/shop 1.png"),
                 SizedBox(width: 5,),
                 Text("Đề xuất quán theo quận ",
                     style: TextStyle(
@@ -143,7 +145,7 @@ class CustomDrawer extends  StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset("assets/icon_gear.png"),
+                Image.asset("assets/gear 1.png"),
                 SizedBox(width: 5,),
                 Text("Cài đặt",
                     style: TextStyle(
