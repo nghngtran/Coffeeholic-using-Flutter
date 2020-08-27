@@ -1,5 +1,6 @@
 #Internal package file, do not edit.
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #Fri Aug 14 21:36:22 ICT 2020
 56.path=flutter_assets/assets/image_8.jpg
 5.base=E\:\\Coffeeholic-using-Flutter\\Coffeeholic-using-Flutter\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
@@ -271,6 +272,8 @@ count=67
 5.set=ASSET
 43.set=ASSET
 =======
+=======
+>>>>>>> Stashed changes
 #Tue Aug 25 21:17:57 ICT 2020
 60.set=ASSET
 52.set=ASSET
@@ -653,4 +656,7 @@ count=95
 93.base=E\:\\Coffeeholic-using-Flutter\\Coffeeholic-using-Flutter\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 9.base=E\:\\Coffeeholic-using-Flutter\\Coffeeholic-using-Flutter\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 85.path=flutter_assets/assets/image_12.jpg
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

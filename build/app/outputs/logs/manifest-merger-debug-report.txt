@@ -6,6 +6,10 @@ INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app
 INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
 MERGED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+MERGED from [:path_provider] E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+>>>>>>> Stashed changes
 =======
 MERGED from [:path_provider] E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
 >>>>>>> Stashed changes
@@ -88,6 +92,11 @@ INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app
 INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app\src\main\AndroidManifest.xml
 INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app\src\main\AndroidManifest.xml
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+MERGED from [:path_provider] E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+>>>>>>> Stashed changes
 =======
 MERGED from [:path_provider] E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
