@@ -5,6 +5,10 @@ INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app
 INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
 INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
 MERGED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
+<<<<<<< Updated upstream
+=======
+MERGED from [:path_provider] E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+>>>>>>> Stashed changes
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\ldhan\.gradle\caches\transforms-1\files-1.1\fragment-1.1.0.aar\eb28b73d1c944ba0b58dbcc5603507ef\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\ldhan\.gradle\caches\transforms-1\files-1.1\activity-1.0.0.aar\127f567d55714e8146e78dfb34cd1743\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ldhan\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0.aar\8ef8b9bc40b8fa9ab77939fa336099b9\AndroidManifest.xml:17:1-22:12
@@ -83,6 +87,11 @@ uses-sdk
 INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app\src\main\AndroidManifest.xml
 INJECTED from E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\android\app\src\main\AndroidManifest.xml
+<<<<<<< Updated upstream
+=======
+MERGED from [:path_provider] E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] E:\Coffeeholic-using-Flutter\Coffeeholic-using-Flutter\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+>>>>>>> Stashed changes
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\ldhan\.gradle\caches\transforms-1\files-1.1\fragment-1.1.0.aar\eb28b73d1c944ba0b58dbcc5603507ef\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\ldhan\.gradle\caches\transforms-1\files-1.1\fragment-1.1.0.aar\eb28b73d1c944ba0b58dbcc5603507ef\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\ldhan\.gradle\caches\transforms-1\files-1.1\activity-1.0.0.aar\127f567d55714e8146e78dfb34cd1743\AndroidManifest.xml:20:5-22:41

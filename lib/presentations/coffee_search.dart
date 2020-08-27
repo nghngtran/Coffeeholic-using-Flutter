@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/data/CoffeeShop.dart';
 import 'package:flutter_story_app_concept/presentations/coffee_shop_detail.dart';
-import '';
 
 class CoffeeSearchPage extends StatefulWidget {
   @override
