@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.search,size: 30),
             color: Colors.black,
-            onPressed: (){},
+            onPressed: (){Navigator.of(context).pushNamed('search');},
           ),
         ],
         leading: Builder(
