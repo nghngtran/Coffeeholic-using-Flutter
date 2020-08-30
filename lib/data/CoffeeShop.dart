@@ -11,15 +11,17 @@ class Drink {
 
 class Comment {
   String userName;
+  String avatarUrl;
   String description;
   double rating;
   List<String> imgUrl;
 
-  Comment(String userName, String descript, double rating, List<String> imgUrl) {
+  Comment(String userName, String descript, double rating, List<String> imgUrl, String avatarUrl) {
     this.userName = userName;
     this.description = descript;
     this.rating = rating;
     this.imgUrl = imgUrl;
+    this.avatarUrl = avatarUrl;
   }
 }
 
@@ -50,19 +52,21 @@ class CoffeeShop {
 
 List<Comment> commentDummy = [
   Comment(
-    "Binh Mai",
+    "Trân Hoàng",
     "Hôm nay là lần đầu mình ghé qua Caztus. Không gian mộc mạc giản dị, đẹp, thoáng và có tông đèn vàng nhẹ nhàng với nền tường đều tông màu trầm tạo cảm giác thư thả, cổ điển rất thích hợp để chụp ảnh flatlay, sống ảo checkin cực chất, có thể ngồi đọc sách thư giản hay chạy deadline với những bản nhạc pop âu mỹ nhẹ nhàng.",
     5,
     [
       "https://images.foody.vn/res/g1/6545/s400x400/foody-caztus-coffee-vo-thi-sau-551-637190252862484012.jpg",
       "https://images.foody.vn/res/g1/6545/s400x400/foody-caztus-coffee-vo-thi-sau-586-637190252862484012.jpg"
-    ]
+    ],
+      'https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-1/p480x480/117296678_1667018933463982_8065538196324255148_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_ohc=TXZAgfsbj0QAX-WXvOb&_nc_ht=scontent-hkg4-1.xx&tp=6&oh=ec74463f8bf6103dadb0fea90c2856bc&oe=5F6F5391'
   ),
   Comment(
-    "Tran Hoang",
+    "Bình Mai",
     "Caztus với một phong cách giản dị vô cùng, nhưng rất ấm cúng. Tông đèn vàng nhẹ nhàng với nền gạch/tường đều tông màu trầm tạo cảm giác thư thả, dễ chịu, với những bản nhạc pop âu mỹ nhẹ nhàng. Đây thích thị là nơi đáng đến và là nơi dễ gây ấn tượng với mình.",
     5,
-    []
+    [],
+      'https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/99152430_1608606139288728_5333275094347153408_o.jpg?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=IVJybT9tOJIAX8PcSr5&_nc_ht=scontent-hkg4-1.xx&oh=ea7de8ae7a740859e863bf83794889a1&oe=5F6FBF1A'
   )
 ];
 
