@@ -6,7 +6,7 @@ import 'package:flutter_story_app_concept/presentations/home_page.dart';
 import 'package:flutter_story_app_concept/presentations/news.dart';
 import 'package:flutter_story_app_concept/presentations/splash_page.dart';
 import 'package:flutter_story_app_concept/presentations/coffee_search.dart';
-
+import 'package:flutter_story_app_concept/presentations/search_screen.dart';
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -16,6 +16,9 @@ class Router {
       case RoutePaths.Home:
         return MaterialPageRoute(
             builder: (BuildContext context) => HomePage());
+      case RoutePaths.Search:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => SearchScreen());
       case RoutePaths.CoffeeStory:
         return MaterialPageRoute(
             builder: (BuildContext context) => CoffeeStoryBoard());

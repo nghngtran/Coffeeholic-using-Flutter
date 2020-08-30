@@ -8,6 +8,7 @@ class RoutePaths {
   static const String SplashScreen ='splash_screen';
   static const String CoffeeShop = 'coffee_shop';
   static const String CoffeeType = 'coffee_type';
+  static const String Search = 'search';
 }
 
 class ColorApp{
