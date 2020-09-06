@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/data/CoffeeShop.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_story_app_concept/presentations/comment_post.dart';
 
 List<CoffeeShop> favoriteListShop = List<CoffeeShop>();
 Color primaryTextColor = Color(0xFF414C6B);
@@ -397,14 +398,18 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                             children: [
                               Text("Đánh giá quán", style: TextStyle(color: primaryTextColor, fontSize: 16),),
                               FlatButton(
-                                onPressed: () => {},
+                                  onPressed:(){
+                                    //Navigator.of(context).push(
+                                      //  MaterialPageRoute(builder: (context) => CommentPost(widget.coffeeInfo)));
+                                    showModalBottomSheet(context: context, builder: (context) => CommentPost(widget.coffeeInfo));
+                                  },
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18.0),),
                                 padding: EdgeInsets.all(10.0),
                                 color: ColorApp.colorBrown,
                                 child: Row( // Replace with a Row for horizontal icon + text
                                   children: <Widget>[
-                                    Text("Viết đánh giá", style: TextStyle(color: Colors.white, fontSize: 14),),
+                                    Text("Viết đánh giá", style: TextStyle(color: Colors.white, fontSize: 14)),
                                   ],
                                 ),
                               )

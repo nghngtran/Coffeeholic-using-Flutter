@@ -107,6 +107,7 @@ List<Drink> drinkDummyTCH = [
   Drink(
       name: "Trà đen macchiato",
       imgUrl: "https://images.foody.vn/res/g9/89880/s80x80/201914111931-tra-den-macchiato.jpg",
+      price: "42.000đ"
   ),
   Drink(
       name: "Americano đá",
