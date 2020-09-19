@@ -80,9 +80,8 @@ class Content extends StatelessWidget{
                 ),
                 Container(
                     margin: EdgeInsets.all(5.5),
-
+                    padding: EdgeInsets.all(5.5),
                     child: Text(data.content,
-
                         overflow: TextOverflow.ellipsis,
                         maxLines: 30)
                 ),

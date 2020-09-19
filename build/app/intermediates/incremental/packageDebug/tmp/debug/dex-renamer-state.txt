@@ -1,4 +1,4 @@
-#Sat Sep 05 15:14:17 ICT 2020
+#Sat Sep 19 19:27:10 ICT 2020
 base.0=E\:\\Coffeeholic-using-Flutter\\Coffeeholic-using-Flutter\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
