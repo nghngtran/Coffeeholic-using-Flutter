@@ -68,31 +68,32 @@ class Content extends StatelessWidget{
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                new Container(
-                  height: h*20,
+                Container(
+                  height: h*40,
                   width: w*100,
-                  child: new Image(
+                  child:  Image(
 
-                    image: new AssetImage(data.coverImg),
+                    image: AssetImage(data.coverImg),
 
-                    fit: BoxFit.fill,
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
                 Container(
-                    margin: EdgeInsets.all(5.5),
-                    padding: EdgeInsets.all(5.5),
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     child: Text(data.content,
                         overflow: TextOverflow.ellipsis,
-                        maxLines: 30)
+                        maxLines: 30,
+                    style: TextStyle(fontSize: 17),)
                 ),
                 Container(
-                    margin: EdgeInsets.all(5.5),
-                    child: Text("Hình ảnh", style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Dancing Script', fontSize: 30))
+                    margin: EdgeInsets.all(7),
+                    padding: EdgeInsets.all(10),
+                    child: Text("Hình ảnh", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23))
                 ),
                 Flexible(
                   child:  SizedBox(
                       height: h*20,
-
                       child: ListImage(data.contentImg)
 
                   ),
@@ -118,7 +119,7 @@ class CoffeeKnowledgeDetailPage extends StatelessWidget{
       home: new Scaffold(
         appBar: new AppBar(
 
-            title: Text(data.title, style: TextStyle(fontFamily: 'Dancing Script',fontSize: 25,color: Colors.black)),
+            title: Text(data.title, style: TextStyle(fontSize: 20,color: Colors.black)),
             backgroundColor: ColorApp.colorYellow,
 
             leading: new  IconButton(icon: Icon(Icons.arrow_back_ios, color: Colors.black), onPressed: (){Navigator.pop(context);},),

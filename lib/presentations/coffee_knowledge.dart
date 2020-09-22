@@ -35,7 +35,7 @@ class CoffeeKnowledgeList extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                  height: h * 7,
+                  height: h * 5,
                   width: w * 50,
                   color: Colors.black.withOpacity(0.5),
                   padding: EdgeInsets.fromLTRB(5, 5, 0, 5),
@@ -45,7 +45,7 @@ class CoffeeKnowledgeList extends StatelessWidget {
                             fontFamily: 'Dancing Script',
                             color: Colors.white,
                             letterSpacing: 1.2,
-                            fontSize: 22)),
+                            fontSize: 24)),
                   )),
             ),
           ]),
@@ -84,7 +84,7 @@ class CoffeeKnowledgePage extends StatelessWidget{
     return MaterialApp(
       home: new Scaffold(
         appBar: new AppBar(
-          title: Text("Thường thức cà phê", style: TextStyle(fontSize: 20,color: Colors.black, fontFamily: 'Dancing Script')),
+          title: Text("Thường thức cà phê", style: TextStyle(fontSize: 20,color: Colors.black)),
           backgroundColor: ColorApp.colorYellow,
           centerTitle: true,
           leading: new  IconButton(icon: Icon(Icons.arrow_back_ios, color: Colors.black), onPressed: (){
