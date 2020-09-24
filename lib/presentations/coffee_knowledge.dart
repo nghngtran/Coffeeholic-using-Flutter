@@ -38,7 +38,7 @@ class CoffeeKnowledgeList extends StatelessWidget {
                   height: h * 5,
                   width: w * 50,
                   color: Colors.black.withOpacity(0.5),
-                  padding: EdgeInsets.fromLTRB(5, 5, 0, 5),
+                  padding: EdgeInsets.fromLTRB(5, 0, 0, 5),
                   child: Center(
                     child: Text(data[i].title,
                         style: TextStyle(
