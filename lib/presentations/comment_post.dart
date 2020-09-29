@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/data/CoffeeShop.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class CommentPost extends StatefulWidget {
   final CoffeeShop coffeeInfo;
@@ -13,6 +14,7 @@ class CommentPost extends StatefulWidget {
 class _CommentPost extends State<CommentPost> {
   final controllerComment = new TextEditingController();
   final controllerName = new TextEditingController();
+  double mRating = 0;
 
   _printLatestValue() {
     print("Second text field: ${controllerComment.text}");
@@ -20,6 +22,23 @@ class _CommentPost extends State<CommentPost> {
 
   onChange(String text) async {
     print("Searching for: ${controllerComment.text}");
+  }
+
+  void addComment() {
+    Comment newCmt = Comment(
+      controllerName.text,
+      controllerComment.text,
+      mRating,
+      [],
+      "https://i1-giaitri.vnecdn.net/2019/11/07/rapper-Den-5510-1573122371.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=wUFsS_hXHLuTKtMRCqNoSQ"
+    );
+    widget.coffeeInfo.comment.insert(0,newCmt);
+    double rating = 0;
+    for(var i = 0; i < widget.coffeeInfo.comment.length; i++){
+      rating+= widget.coffeeInfo.comment[i].rating;
+    }
+    widget.coffeeInfo.rating = rating/widget.coffeeInfo.comment.length;
+    Navigator.of(context).pop();
   }
 
   void initState() {
@@ -59,7 +78,9 @@ class _CommentPost extends State<CommentPost> {
                 Spacer(),
                 IconButton(
                   icon: Icon(Icons.add_box, color: ColorApp.colorWhite, size: 25),
-                  onPressed: () => {Navigator.of(context).pop()},
+                  onPressed: () => {
+                    addComment()
+                  },
                 )
               ],
             ),
@@ -97,6 +118,7 @@ class _CommentPost extends State<CommentPost> {
                     color: Colors.amber,
                   ),
                   onRatingUpdate: (rating) {
+                    mRating = rating;
                     print(rating);
                   },
                 ),

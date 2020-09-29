@@ -31,7 +31,7 @@ class CoffeeShop {
   final String district;
   final String position;
   final String description;
-  final double rating;
+  double rating;
   final List<Drink> menu;
   final List<String> images;
   final List<String> hashtag;
@@ -59,14 +59,24 @@ List<Comment> commentDummy = [
       "https://images.foody.vn/res/g1/6545/s400x400/foody-caztus-coffee-vo-thi-sau-551-637190252862484012.jpg",
       "https://images.foody.vn/res/g1/6545/s400x400/foody-caztus-coffee-vo-thi-sau-586-637190252862484012.jpg"
     ],
-      'https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-1/p480x480/117296678_1667018933463982_8065538196324255148_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_ohc=TXZAgfsbj0QAX-WXvOb&_nc_ht=scontent-hkg4-1.xx&tp=6&oh=ec74463f8bf6103dadb0fea90c2856bc&oe=5F6F5391'
+      'https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-9/88079180_1518285701670640_8144051810546483200_o.jpg?_nc_cat=101&_nc_sid=8bfeb9&_nc_ohc=-POMS8V1A8sAX-WXzyi&_nc_ht=scontent.fsgn5-1.fna&oh=0c040afa339934d8741c54a2e714abbb&oe=5F99CB7C'
   ),
   Comment(
     "Bình Mai",
     "Caztus với một phong cách giản dị vô cùng, nhưng rất ấm cúng. Tông đèn vàng nhẹ nhàng với nền gạch/tường đều tông màu trầm tạo cảm giác thư thả, dễ chịu, với những bản nhạc pop âu mỹ nhẹ nhàng. Đây thích thị là nơi đáng đến và là nơi dễ gây ấn tượng với mình.",
     5,
     [],
-      'https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/99152430_1608606139288728_5333275094347153408_o.jpg?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=IVJybT9tOJIAX8PcSr5&_nc_ht=scontent-hkg4-1.xx&oh=ea7de8ae7a740859e863bf83794889a1&oe=5F6FBF1A'
+      'https://scontent.fsgn5-3.fna.fbcdn.net/v/t1.0-9/54799545_1241567659325913_7117993460790984704_o.jpg?_nc_cat=110&_nc_sid=84a396&_nc_ohc=XPspW9rG25MAX9opy25&_nc_ht=scontent.fsgn5-3.fna&oh=493ef73a446f4bc82f24354e80449f7d&oe=5F969CB5'
+  ),
+  Comment(
+    "Bình Trịnh",
+    "Hồi đấy mình hay đi uống Caztus lắm nè do hồi đó có thời gian rảnh rỗi. Mà giá cả ở đây cũng ổn nữa nên hay đi lắm. Thấy bên Caztus cũng chăm ra mấy món mới. Mỗi lần đến mình toàn thử mấy món seasonal ko à chứ ít uống mấy món sẵn trong menu lắm",
+    4,
+      [
+        "https://images.foody.vn/res/g1/6545/s160x160/foody-caztus-coffee-vo-thi-sau-423-636862108307045005.jpg",
+        "https://images.foody.vn/res/g1/6545/s160x160/foody-caztus-coffee-vo-thi-sau-803-636756214712632805.jpg"
+      ],
+    "https://scontent.fsgn5-3.fna.fbcdn.net/v/t1.0-9/80807282_1420768638090492_7082810987077697536_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=532EF5XR_UQAX_ka2WC&_nc_ht=scontent.fsgn5-3.fna&oh=738ecf903e7d9e9a5a33c460462513fa&oe=5F98A9D4"
   )
 ];
 

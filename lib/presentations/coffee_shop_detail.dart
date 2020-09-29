@@ -1,9 +1,14 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/data/CoffeeShop.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_story_app_concept/presentations/comment_post.dart';
+import 'package:flutter_story_app_concept/presentations/all_comment.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import "dart:async";
 
 List<CoffeeShop> favoriteListShop = List<CoffeeShop>();
 Color primaryTextColor = Color(0xFF414C6B);
@@ -36,6 +41,8 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
       isSaved = false;
     });
   }
+
+  final spinkit = SpinKitChasingDots(color: ColorApp.colorYellow);
 
   @override
   Widget build(BuildContext context) {
@@ -189,6 +196,21 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                           ],
                         ),
                         SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            FlatButton(
+                              onPressed: () => {},
+                              padding: EdgeInsets.all(10.0),
+                              child: Row( // Replace with a Row for horizontal icon + text
+                                children: <Widget>[
+                                  Text("Xem thêm", style: TextStyle(color: hashtagColor),),
+                                  Icon(Icons.arrow_forward, color: hashtagColor,),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                         Divider(color: Colors.black38),
                       ],
                     ),
@@ -346,7 +368,7 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                           ),
                         ),
                         RatingBar(
-                          initialRating: widget.coffeeInfo.rating,
+                          initialRating: (widget.coffeeInfo.rating*pow(10,2)).round()/pow(10, 2),
                           minRating: 1,
                           itemSize: 20,
                           direction: Axis.horizontal,
@@ -370,10 +392,12 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                             fontWeight: FontWeight.w300,
                           ),
                         ),
-                        SizedBox(width: w*5)
+                        SizedBox(width: w*3)
                         ,
                         FlatButton(
-                          onPressed: () => {},
+                          onPressed: () => {
+                            Navigator.of(context).push( MaterialPageRoute(builder: (context) => AllComment(widget.coffeeInfo)))
+                          },
                           padding: EdgeInsets.all(10.0),
                           child: Row( // Replace with a Row for horizontal icon + text
                             children: <Widget>[
@@ -398,10 +422,23 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                             children: [
                               Text("Đánh giá quán", style: TextStyle(color: primaryTextColor, fontSize: 16),),
                               FlatButton(
-                                  onPressed:(){
+                                  onPressed:() {
                                     //Navigator.of(context).push(
                                       //  MaterialPageRoute(builder: (context) => CommentPost(widget.coffeeInfo)));
-                                    showModalBottomSheet(context: context, builder: (context) => CommentPost(widget.coffeeInfo));
+                                    showModalBottomSheet(context: context, isScrollControlled: true, builder: (context) => SingleChildScrollView(child: Container(
+                                      padding: EdgeInsets.only(
+                                        bottom: MediaQuery.of(context).viewInsets.bottom)*0.8,
+                                      child: CommentPost(widget.coffeeInfo),
+                                      ),
+                                    ),).whenComplete(() async {
+                                    showDialog(context: context,
+                                    builder: (context) => spinkit
+                                    );
+                                    await new Future.delayed(const Duration(milliseconds: 1000));
+                                    Navigator.pop(context);
+                                    setState(() {
+                                    });
+                                    });
                                   },
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18.0),),
@@ -433,7 +470,7 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                           ),
                           Wrap(
                             children: [
-                              Container(width: w*90,height: h*widget.coffeeInfo.comment.length*30,
+                              Container(width: w*90,height: h*30,
                                   child: new ListView.separated(itemCount: widget.coffeeInfo.comment.length,separatorBuilder: (context,index){
                                     return Divider(color: ColorApp.colorBrown.withOpacity(0.8),thickness: 1.0);
                                   },itemBuilder: (context,index){
