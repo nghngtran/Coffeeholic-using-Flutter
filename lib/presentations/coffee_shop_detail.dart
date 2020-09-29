@@ -1,8 +1,14 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/data/CoffeeShop.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_story_app_concept/presentations/comment_post.dart';
+import 'package:flutter_story_app_concept/presentations/all_comment.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import "dart:async";
 
 List<CoffeeShop> favoriteListShop = List<CoffeeShop>();
 Color primaryTextColor = Color(0xFF414C6B);
@@ -19,13 +25,24 @@ class CoffeeShopDetailPage extends StatefulWidget {
 
 class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
   bool isSaved;
+  String hashtag = "";
+
+  void _createHashtag() {
+    for(var i = 0; i < widget.coffeeInfo.hashtag.length; i++) {
+      hashtag = hashtag + " #" + widget.coffeeInfo.hashtag[i];
+    }
+  }
 
   void initState(){
     super.initState();
+    _createHashtag();
+    print("Leng: " + widget.coffeeInfo.comment.length.toString());
     setState(() {
       isSaved = false;
     });
   }
+
+  final spinkit = SpinKitChasingDots(color: ColorApp.colorYellow);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +50,7 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
     double w = MediaQuery.of(context).size.width/100;
     double h =  MediaQuery.of(context).size.height/100;
     return Scaffold(appBar: AppBar(backgroundColor: ColorApp.colorYellow,
-      iconTheme: IconThemeData(color: Colors.black)),
+        iconTheme: IconThemeData(color: Colors.black)),
       body: SafeArea(
         bottom: false,
         child: Stack(
@@ -168,37 +185,17 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                         SizedBox(height: 10),
                         Wrap(
                           children: [
-                            Container(width: w*100,height: h*widget.coffeeInfo.menu.length*15,
-                              child: ListView.separated(itemCount: widget.coffeeInfo.menu.length,separatorBuilder: (context,index){
-                                return Divider(color: ColorApp.colorBrown.withOpacity(0.8),thickness: 1.0);
-                              },itemBuilder: (context,index){
-                                final item = widget.coffeeInfo.menu[index];
-                                return MenuDetail(item);
-                              },)
+                            Container(width: w*90,height: h*widget.coffeeInfo.menu.length*10,
+                                child: ListView.separated(itemCount: widget.coffeeInfo.menu.length,separatorBuilder: (context,index){
+                                  return Divider(color: ColorApp.colorBrown.withOpacity(0.8),thickness: 1.0);
+                                },itemBuilder: (context,index){
+                                  final item = widget.coffeeInfo.menu[index];
+                                  return MenuDetail(item);
+                                },)
                             )
                           ],
                         ),
                         SizedBox(height: 10),
-                        Divider(color: Colors.black38),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text(
-                          'Coffeeholic nghĩ gì về quán?',
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 25,
-                            color: const Color(0xff47455f),
-                            fontWeight: FontWeight.w300,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -214,10 +211,98 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                             )
                           ],
                         ),
-                        SizedBox(height: 10),
                         Divider(color: Colors.black38),
                       ],
-                    )
+                    ),
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            'Coffeeholic nghĩ gì về quán?',
+                            style: TextStyle(
+                              fontFamily: 'Avenir',
+                              fontSize: 25,
+                              color: const Color(0xff47455f),
+                              fontWeight: FontWeight.w300,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              FlatButton(
+                                onPressed: () => {},
+                                padding: EdgeInsets.all(10.0),
+                                child: Row( // Replace with a Row for horizontal icon + text
+                                  children: <Widget>[
+                                    Text("Xem thêm", style: TextStyle(color: hashtagColor),),
+                                    Icon(Icons.arrow_forward, color: hashtagColor,),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Divider(color: Colors.black38),
+                        ],
+                      )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          height: h*4,
+                          width: w*12,
+                          alignment: Alignment.center,
+                          decoration: new BoxDecoration(
+                            color: hashtagColor,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          child: Text(
+                            'Tag',
+                            style: TextStyle(
+                              fontFamily: 'Avenir',
+                              fontSize: 22,
+                              color: ColorApp.colorWhite,
+                              fontWeight: FontWeight.w300,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Flexible(
+                          child: new Container(
+                            child: Text(
+                              hashtag ?? '',
+                              maxLines: 100,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'Avenir',
+                                fontSize: 20,
+                                color: hashtagColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        SizedBox(height: 10),
+                        Divider(color: Colors.black38),
+                      ],)
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
@@ -254,6 +339,150 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                           );
                         }),
                   ),
+                  SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
+                    child: Text(
+                      'Đánh giá và bình luận',
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 25,
+                        color: const Color(0xff47455f),
+                        fontWeight: FontWeight.w300,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Padding(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          widget.coffeeInfo.rating.toString() + "/5",
+                          style: TextStyle(
+                            fontFamily: 'Avenir',
+                            fontSize: 18,
+                            color: primaryTextColor,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        RatingBar(
+                          initialRating: (widget.coffeeInfo.rating*pow(10,2)).round()/pow(10, 2),
+                          minRating: 1,
+                          itemSize: 20,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          onRatingUpdate: (rating) {
+                            print(rating);
+                          },
+                        ),
+                        Text(
+                          '('+ widget.coffeeInfo.comment.length.toString()+ ' bình luận)',
+                          style: TextStyle(
+                            fontFamily: 'Avenir',
+                            fontSize: 14,
+                            color: primaryTextColor,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                        SizedBox(width: w*3)
+                        ,
+                        FlatButton(
+                          onPressed: () => {
+                            Navigator.of(context).push( MaterialPageRoute(builder: (context) => AllComment(widget.coffeeInfo)))
+                          },
+                          padding: EdgeInsets.all(10.0),
+                          child: Row( // Replace with a Row for horizontal icon + text
+                            children: <Widget>[
+                              Text("Xem tất cả", style: TextStyle(color: hashtagColor),),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Divider(color: Colors.black38),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text("Đánh giá quán", style: TextStyle(color: primaryTextColor, fontSize: 16),),
+                              FlatButton(
+                                  onPressed:() {
+                                    //Navigator.of(context).push(
+                                      //  MaterialPageRoute(builder: (context) => CommentPost(widget.coffeeInfo)));
+                                    showModalBottomSheet(context: context, isScrollControlled: true, builder: (context) => SingleChildScrollView(child: Container(
+                                      padding: EdgeInsets.only(
+                                        bottom: MediaQuery.of(context).viewInsets.bottom)*0.8,
+                                      child: CommentPost(widget.coffeeInfo),
+                                      ),
+                                    ),).whenComplete(() async {
+                                    showDialog(context: context,
+                                    builder: (context) => spinkit
+                                    );
+                                    await new Future.delayed(const Duration(milliseconds: 1000));
+                                    Navigator.pop(context);
+                                    setState(() {
+                                    });
+                                    });
+                                  },
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),),
+                                padding: EdgeInsets.all(10.0),
+                                color: ColorApp.colorBrown,
+                                child: Row( // Replace with a Row for horizontal icon + text
+                                  children: <Widget>[
+                                    Text("Viết đánh giá", style: TextStyle(color: Colors.white, fontSize: 14)),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                          RatingBar(
+                            initialRating: 0,
+                            minRating: 1,
+                            itemSize: 32,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                            itemBuilder: (context, _) => Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            onRatingUpdate: (rating) {
+                              print(rating);
+                            },
+                          ),
+                          Wrap(
+                            children: [
+                              Container(width: w*90,height: h*30,
+                                  child: new ListView.separated(itemCount: widget.coffeeInfo.comment.length,separatorBuilder: (context,index){
+                                    return Divider(color: ColorApp.colorBrown.withOpacity(0.8),thickness: 1.0);
+                                  },itemBuilder: (context,index){
+                                    final item = widget.coffeeInfo.comment[index];
+                                    return CommentDetail(item);
+                                  },)
+                              )
+                            ],
+                          ),
+                        ],)
+                  ),
+
                 ],
               ),
             ),
@@ -263,7 +492,7 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
       ),
     );
   }
-  
+
 }
 
 class MenuDetail extends StatelessWidget{
@@ -299,6 +528,111 @@ class MenuDetail extends StatelessWidget{
               ),
               SizedBox(width: 5)
             ],),]),
+    );
+  }
+}
+
+class CommentDetail extends StatelessWidget{
+  final Comment post;
+  CommentDetail(Comment commentInfo):post = commentInfo;
+  Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width/100;
+    double h =  MediaQuery.of(context).size.height/100;
+    return GestureDetector(onTap:(){
+    },
+      child:
+      Wrap(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      width: 50,
+                      margin: EdgeInsets.all(10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(25),
+                        child:Image.network(post.avatarUrl,width: 50,height: 50,fit: BoxFit.cover),
+                      ),
+                    ),
+                    Container(
+                      width: w*68,
+                      margin: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            post.userName,style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.w600),
+                          ),
+                          RatingBar(
+                            initialRating: post.rating,
+                            minRating: 1,
+                            itemSize: 20,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                            itemBuilder: (context, _) => Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            onRatingUpdate: (rating) {
+                              print(rating);
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Flexible(
+                  child: new Container(
+                    child: Text(
+                      post.description ?? '',
+                      maxLines: 100,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontSize: 18,
+                        color: contentTextColor,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              height: 100,
+              padding: const EdgeInsets.only(left: 0, top: 10.0),
+              child: ListView.builder(
+                  itemCount: post.imgUrl.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                      child: AspectRatio(
+                          aspectRatio: 1,
+                          child: Image.network(
+                            post.imgUrl[index],
+                            fit: BoxFit.cover,
+                          )),
+                    );
+                  }),
+            )
+          ]),
     );
   }
 }
