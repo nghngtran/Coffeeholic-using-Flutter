@@ -3,7 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/data/CoffeeShop.dart';
 import 'package:flutter_story_app_concept/presentations/coffee_shop_detail.dart';
-import '';
+
+var hisShop = List<CoffeeShop>();
 
 class CoffeeSearchPage extends StatefulWidget {
   @override
@@ -39,6 +40,69 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
 
   onSearch(String text) async {
     print("Searching for: ${controller.text}");
+    List<CoffeeShop> searchList = [];
+    setState(() {
+      if(controller.text.isNotEmpty) {
+        dummyCoffeeShop.forEach((shop) {
+          print(shop.name);
+          if(dropdownValue.contains("Tất cả")) {
+            if(shop.name.toLowerCase().contains(controller.text.toLowerCase())) {
+              searchList.add(shop);
+            }
+          }
+          else {
+            if(shop.name.toLowerCase().contains(controller.text.toLowerCase()) && shop.district.toLowerCase().contains(dropdownValue.toLowerCase())) {
+              searchList.add(shop);
+            }
+          }
+        });
+        this._dummyCoffeeShop = searchList;
+      }
+      else{
+        dummyCoffeeShop.forEach((shop) {
+          if(dropdownValue.contains("Tất cả")) {
+            searchList.add(shop);
+          }
+          else {
+            if(shop.district.toLowerCase().contains(dropdownValue.toLowerCase())) {
+              searchList.add(shop);
+            }
+          }
+        });
+        this._dummyCoffeeShop = searchList;
+      }
+    });
+    setState(() {
+      if(controller.text.isNotEmpty) {
+        dummyCoffeeShop.forEach((shop) {
+          print(shop.name);
+          if(dropdownValue.contains("Tất cả")) {
+            if(shop.name.toLowerCase().contains(controller.text.toLowerCase())) {
+              searchList.add(shop);
+            }
+          }
+          else {
+            if(shop.name.toLowerCase().contains(controller.text.toLowerCase()) && shop.district.toLowerCase().contains(dropdownValue.toLowerCase())) {
+              searchList.add(shop);
+            }
+          }
+        });
+        this._dummyCoffeeShop = searchList;
+      }
+      else{
+        dummyCoffeeShop.forEach((shop) {
+          if(dropdownValue.contains("Tất cả")) {
+            searchList.add(shop);
+          }
+          else {
+            if(shop.district.toLowerCase().contains(dropdownValue.toLowerCase())) {
+              searchList.add(shop);
+            }
+          }
+        });
+        this._dummyCoffeeShop = searchList;
+      }
+    });
   }
 
   @override
@@ -127,6 +191,7 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
                           onChanged: (String newValue) {
                             setState(() {
                               dropdownValue = newValue;
+                              onSearch("filter");
                             });
                           },
                           items: this.listItem,
@@ -166,9 +231,9 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
             child: TabBarView(
               children: [
                 new ListView.builder(
-                  itemCount: dummyCoffeeShop.length,
+                  itemCount: hisShop.length,
                   itemBuilder: (BuildContext ctxt, int index) {
-                    final item = _dummyCoffeeShop[index];
+                    final item = hisShop[index];
                     return CoffeeShopRow(item);
                   },
                 ),
@@ -199,6 +264,17 @@ class CoffeeShopRow extends StatelessWidget{
     double h =  MediaQuery.of(context).size.height/100;
     return GestureDetector(
       onTap:(){
+        if(hisShop.length == 3){
+          if(!hisShop.contains(row)) {
+            hisShop.removeLast();
+            hisShop.insert(0,row);
+          }
+        }
+        else {
+          if(!hisShop.contains(row)) {
+            hisShop.insert(0,row);
+          }
+        }
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => CoffeeShopDetailPage(row)));
       },

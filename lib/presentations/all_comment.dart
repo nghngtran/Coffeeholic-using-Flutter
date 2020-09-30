@@ -141,9 +141,8 @@ class _AllComment extends State<AllComment> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          widget.coffeeInfo.rating.toString(),
+                          widget.coffeeInfo.rating.toStringAsFixed(2),
                           style: TextStyle(
-                            fontFamily: 'Avenir',
                             fontSize: 24,
                             color: primaryTextColor,
                             fontWeight: FontWeight.w400,
@@ -168,7 +167,6 @@ class _AllComment extends State<AllComment> {
                         Text(
                           '('+ widget.coffeeInfo.comment.length.toString()+ ' bình luận)',
                           style: TextStyle(
-                            fontFamily: 'Avenir',
                             fontSize: 15,
                             color: primaryTextColor,
                             fontWeight: FontWeight.w300,
@@ -205,7 +203,6 @@ class _AllComment extends State<AllComment> {
                               Text(
                                 'Tất cả',
                                 style: TextStyle(
-                                  fontFamily: 'Avenir',
                                   fontSize: 15,
                                   color: primaryTextColor,
                                   fontWeight: FontWeight.w300,
@@ -229,7 +226,6 @@ class _AllComment extends State<AllComment> {
                               Text(
                                 'Kèm hình ảnh',
                                 style: TextStyle(
-                                  fontFamily: 'Avenir',
                                   fontSize: 15,
                                   color: primaryTextColor,
                                   fontWeight: FontWeight.w300,
@@ -260,7 +256,6 @@ class _AllComment extends State<AllComment> {
                                 Text(
                                   '5',
                                   style: TextStyle(
-                                    fontFamily: 'Avenir',
                                     fontSize: 15,
                                     color: primaryTextColor,
                                     fontWeight: FontWeight.w300,
@@ -293,7 +288,6 @@ class _AllComment extends State<AllComment> {
                                 Text(
                                   '4',
                                   style: TextStyle(
-                                    fontFamily: 'Avenir',
                                     fontSize: 15,
                                     color: primaryTextColor,
                                     fontWeight: FontWeight.w300,
@@ -326,7 +320,6 @@ class _AllComment extends State<AllComment> {
                                 Text(
                                   '3',
                                   style: TextStyle(
-                                    fontFamily: 'Avenir',
                                     fontSize: 15,
                                     color: primaryTextColor,
                                     fontWeight: FontWeight.w300,
@@ -359,7 +352,6 @@ class _AllComment extends State<AllComment> {
                                 Text(
                                   '2',
                                   style: TextStyle(
-                                    fontFamily: 'Avenir',
                                     fontSize: 15,
                                     color: primaryTextColor,
                                     fontWeight: FontWeight.w300,
@@ -392,7 +384,6 @@ class _AllComment extends State<AllComment> {
                                 Text(
                                   '1',
                                   style: TextStyle(
-                                    fontFamily: 'Avenir',
                                     fontSize: 15,
                                     color: primaryTextColor,
                                     fontWeight: FontWeight.w300,
@@ -509,7 +500,6 @@ class CommentDetail extends StatelessWidget{
                         maxLines: 100,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          fontFamily: 'Avenir',
                           fontSize: 18,
                           color: contentTextColor,
                         ),
@@ -519,7 +509,7 @@ class CommentDetail extends StatelessWidget{
                 ],
               ),
               Container(
-                height: 100,
+                height: 110,
                 padding: const EdgeInsets.only(left: 0, top: 10.0),
                 child: ListView.builder(
                     itemCount: post.imgUrl.length,
@@ -538,6 +528,27 @@ class CommentDetail extends StatelessWidget{
                             )),
                       );
                     }),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.favorite_border,color: ColorApp.colorCoffee,size: 23),
+                    onPressed: () => {},
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.chat_bubble_outline,color: ColorApp.colorCoffee,size: 23),
+                    onPressed: () => {},
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.share,color: ColorApp.colorCoffee,size: 23),
+                    onPressed: () => {},
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.more_vert,color: ColorApp.colorCoffee,size: 23),
+                    onPressed: () => {},
+                  )
+                ],
               )
             ]),
       ),
