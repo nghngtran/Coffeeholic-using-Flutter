@@ -359,7 +359,7 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          widget.coffeeInfo.rating.toString() + "/5",
+                          widget.coffeeInfo.rating.toStringAsFixed(2) + "/5",
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 18,
@@ -368,7 +368,7 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                           ),
                         ),
                         RatingBar(
-                          initialRating: (widget.coffeeInfo.rating*pow(10,2)).round()/pow(10, 2),
+                          initialRating: widget.coffeeInfo.rating,
                           minRating: 1,
                           itemSize: 20,
                           direction: Axis.horizontal,

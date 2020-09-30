@@ -31,7 +31,7 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
   @override
   void initState() {
     _tabController = new TabController(length: 2, vsync: this);
-    this._dummyCoffeeShop = dummyCoffeeShop;
+    this._dummyCoffeeShop = List.from(dummyCoffeeShop);
     super.initState();
     controller.addListener(_printLatestValue);
     _tabController.addListener(_handleTabSelection);
@@ -39,6 +39,19 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
 
   onSearch(String text) async {
     print("Searching for: ${controller.text}");
+    if(controller.text.isEmpty) {
+      this._dummyCoffeeShop = List.from(dummyCoffeeShop);
+    }
+    else {
+      List<CoffeeShop> searchList = List.from(dummyCoffeeShop);
+      for (int i = 0; i < dummyCoffeeShop.length; i++) {
+        if(!dummyCoffeeShop[i].name.contains(controller.text))
+          searchList.removeAt(i);
+      }
+      this._dummyCoffeeShop = searchList;
+    }
+    setState(() {
+    });
   }
 
   @override
@@ -166,7 +179,7 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
             child: TabBarView(
               children: [
                 new ListView.builder(
-                  itemCount: dummyCoffeeShop.length,
+                  itemCount: _dummyCoffeeShop.length,
                   itemBuilder: (BuildContext ctxt, int index) {
                     final item = _dummyCoffeeShop[index];
                     return CoffeeShopRow(item);

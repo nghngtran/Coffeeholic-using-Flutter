@@ -141,7 +141,7 @@ class _AllComment extends State<AllComment> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          widget.coffeeInfo.rating.toString(),
+                          widget.coffeeInfo.rating.toStringAsFixed(2),
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 24,
@@ -519,7 +519,7 @@ class CommentDetail extends StatelessWidget{
                 ],
               ),
               Container(
-                height: 100,
+                height: 110,
                 padding: const EdgeInsets.only(left: 0, top: 10.0),
                 child: ListView.builder(
                     itemCount: post.imgUrl.length,
@@ -538,6 +538,27 @@ class CommentDetail extends StatelessWidget{
                             )),
                       );
                     }),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.favorite_border,color: ColorApp.colorCoffee,size: 23),
+                    onPressed: () => {},
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.chat_bubble_outline,color: ColorApp.colorCoffee,size: 23),
+                    onPressed: () => {},
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.share,color: ColorApp.colorCoffee,size: 23),
+                    onPressed: () => {},
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.more_vert,color: ColorApp.colorCoffee,size: 23),
+                    onPressed: () => {},
+                  )
+                ],
               )
             ]),
       ),
