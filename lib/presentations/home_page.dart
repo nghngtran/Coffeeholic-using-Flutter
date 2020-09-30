@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_story_app_concept/application/constant.dart';
 import 'package:flutter_story_app_concept/customIcons.dart';
@@ -137,53 +138,59 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 20.0),
-              child: Row(
+              padding: EdgeInsets.only(left: 50.0,right: 50.0),
+              child: Row(mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  GestureDetector(
-                    onTap: (){
-                      setState(() {
-                        typeDis = Discovery.XemNhieu;
-                      });
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: typeDis == Discovery.XemNhieu ? ColorApp.colorYellow : Colors.transparent,
-                        borderRadius: BorderRadius.circular(20.0),
-                        border: Border.all(color: typeDis == Discovery.XemNhieu ? ColorApp.colorYellow : ColorApp.colorCoffee.withOpacity(0.3))
-                      ),
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 22.0, vertical: 6.0),
-                          child: Text("Xem nhiều",
-                              style: TextStyle(color: Colors.black)),
+                  Expanded(flex: 5,
+                    child: GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          typeDis = Discovery.XemNhieu;
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: typeDis == Discovery.XemNhieu ? ColorApp.colorYellow : Colors.transparent,
+                          borderRadius: BorderRadius.circular(20.0),
+                          border: Border.all(color: typeDis == Discovery.XemNhieu ? ColorApp.colorYellow : ColorApp.colorCoffee.withOpacity(0.3))
+                        ),
+                        child: Center(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 22.0, vertical: 6.0),
+                            child: Text("Xem nhiều",
+                                style: TextStyle(color: Colors.black,fontSize: 17)),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(
-                    width: 15.0,
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      setState(() {
-                        typeDis = Discovery.BaiViet;
-                      });
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: typeDis == Discovery.BaiViet ? ColorApp.colorYellow : Colors.transparent,
-                        borderRadius: BorderRadius.circular(20.0),
-                          border: Border.all(color: typeDis == Discovery.BaiViet ? ColorApp.colorYellow : ColorApp.colorCoffee.withOpacity(0.3)
-                      ),
-                      ),
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 22.0, vertical: 6.0),
-                          child: Text("Bảng tin",
-                              style: TextStyle(color: Colors.black)),
+                  Expanded(flex: 1, child:Container()),
+                  // SizedBox(
+                  //   width: 15.0,
+                  // ),
+                  Expanded(flex: 5,
+                    child: GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          typeDis = Discovery.BaiViet;
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: typeDis == Discovery.BaiViet ? ColorApp.colorYellow : Colors.transparent,
+                          borderRadius: BorderRadius.circular(20.0),
+                            border: Border.all(color: typeDis == Discovery.BaiViet ? ColorApp.colorYellow : ColorApp.colorCoffee.withOpacity(0.3)
+                        ),
+                        ),
+                        child: Center(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 22.0, vertical: 6.0),
+                            child: Text("Bảng tin",
+                                style: TextStyle(color: Colors.black,fontSize: 17)),
+                          ),
                         ),
                       ),
                     ),
@@ -266,7 +273,7 @@ class _HomePageState extends State<HomePage> {
                           padding: EdgeInsets.symmetric(
                               horizontal: 22.0, vertical: 6.0),
                           child: Text("Gần đây",
-                              style: TextStyle(color: Colors.black)),
+                              style: TextStyle(color: Colors.black,fontSize:17)),
                         ),
                       ),
                     ),
@@ -292,7 +299,7 @@ class _HomePageState extends State<HomePage> {
                           padding: EdgeInsets.symmetric(
                               horizontal: 22.0, vertical: 6.0),
                           child: Text("Đã lưu",
-                              style: TextStyle(color: Colors.black)),
+                              style: TextStyle(color: Colors.black,fontSize:17)),
                         ),
                       ),
                     ),
