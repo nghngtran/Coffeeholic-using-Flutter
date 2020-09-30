@@ -211,7 +211,7 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
                 new ListView.builder(
                   itemCount: _dummyCoffeeShop.length,
                   itemBuilder: (BuildContext ctxt, int index) {
-                    final item = dummyCoffeeShop[index];
+                    final item = _dummyCoffeeShop[index];
                     return CoffeeShopRow(item);
                   },
                 ),

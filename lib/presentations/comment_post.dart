@@ -66,7 +66,7 @@ class _CommentPost extends State<CommentPost> {
       child: Column(
         children: [
           Container(
-            color: ColorApp.colorBrown,
+            color: ColorApp.colorYellow,
             padding: EdgeInsets.only(right: 9.0, left: 9.0),
             child: Row(
               children: [
@@ -86,7 +86,8 @@ class _CommentPost extends State<CommentPost> {
             ),
           ),
           Container(
-            color: Color.fromRGBO(192, 158, 122, 0.5),
+            //color: Color.fromRGBO(192, 158, 122, 0.5),
+            color: ColorApp.colorWhite,
             padding: EdgeInsets.all(2.0),
             child: Row(
               children: [
