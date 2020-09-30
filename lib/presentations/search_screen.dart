@@ -198,7 +198,7 @@ class _SearchScreen extends State<SearchScreen> with SingleTickerProviderStateMi
                             });
                             // Shows the information on Snackbar
                             Scaffold.of(context)
-                                .showSnackBar(SnackBar(content: Text("$item dismissed")));
+                                .showSnackBar(SnackBar(content: Text(item.name + " dismissed")));
                           },
                           secondaryBackground: Container(
                             child: Row(

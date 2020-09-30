@@ -82,6 +82,7 @@ class CoffeeKnowledgePage extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: new Scaffold(
         appBar: new AppBar(
           title: Text("Thường thức cà phê", style: TextStyle(fontSize: 20,color: Colors.black)),

@@ -220,10 +220,10 @@ List<CoffeeShop> dummyCoffeeShop = [
     comment: commentDummy,
   ),
   CoffeeShop(
-    iconImg: "https://images.foody.vn/res/g9/89880/prof/s576x330/foody-mobile-cao-thang-mb-jpg-435-635736287744031406.jpg",
-    name: "The Coffee House - Cao Thắng",
-    district: "Quận 3",
-    position: "86 - 88 Cao Thắng,  Quận 3, TP. HCM",
+    iconImg: "https://images.foody.vn/res/g81/803287/prof/s576x330/foody-upload-api-foody-mobile-hmbb-jpg-181119155307.jpg",
+    name: "The Youth - Food & Drink",
+    district: "Tân Bình",
+    position: "470 Cộng Hòa, P. 13,  Quận Tân Bình, TP. HCM",
     description: "Một tình yêu đẹp có vị giống một ly cà phê ngon. Có đủ đắng, chua, chát. Và hậu vị ngọt béo thật dài. Tùy vào mỗi người mà hương vị được gia giảm khác nhau.",
     rating: 4.3,
     menu: drinkDummyTCH,
@@ -235,9 +235,9 @@ List<CoffeeShop> dummyCoffeeShop = [
       "https://images.foody.vn/res/g9/89880/s/foody-the-coffee-house-cao-thang-451-637062191541175654.jpg",
     ],
     hashtag: [
-      "TheCoffeeHouse",
-      "CapheQuan3",
-      "CapPheCaoThang",
+      "TheYouth",
+      "CapheTanBinh",
+      "CapPheCongHoa",
       "Café"
     ],
     comment: commentDummy,

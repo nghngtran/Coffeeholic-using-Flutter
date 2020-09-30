@@ -39,10 +39,11 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
   }
 
   onSearch(String text) async {
-    print("Searching for: ${controller.text}");
+    print("Searching for: ${controller.text} and ${dropdownValue}");
     List<CoffeeShop> searchList = [];
     setState(() {
       if(controller.text.isNotEmpty) {
+        print("Case 1");
         dummyCoffeeShop.forEach((shop) {
           print(shop.name);
           if(dropdownValue.contains("Tất cả")) {
@@ -59,37 +60,7 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
         this._dummyCoffeeShop = searchList;
       }
       else{
-        dummyCoffeeShop.forEach((shop) {
-          if(dropdownValue.contains("Tất cả")) {
-            searchList.add(shop);
-          }
-          else {
-            if(shop.district.toLowerCase().contains(dropdownValue.toLowerCase())) {
-              searchList.add(shop);
-            }
-          }
-        });
-        this._dummyCoffeeShop = searchList;
-      }
-    });
-    setState(() {
-      if(controller.text.isNotEmpty) {
-        dummyCoffeeShop.forEach((shop) {
-          print(shop.name);
-          if(dropdownValue.contains("Tất cả")) {
-            if(shop.name.toLowerCase().contains(controller.text.toLowerCase())) {
-              searchList.add(shop);
-            }
-          }
-          else {
-            if(shop.name.toLowerCase().contains(controller.text.toLowerCase()) && shop.district.toLowerCase().contains(dropdownValue.toLowerCase())) {
-              searchList.add(shop);
-            }
-          }
-        });
-        this._dummyCoffeeShop = searchList;
-      }
-      else{
+        print("Case 2");
         dummyCoffeeShop.forEach((shop) {
           if(dropdownValue.contains("Tất cả")) {
             searchList.add(shop);
