@@ -90,7 +90,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                                   child: Text(
                                     widget.coffeeInfo.position,
                                     style: TextStyle(
-                                      fontFamily: 'Avenir',
                                       fontSize: 18,
                                       color: primaryTextColor,
                                       fontWeight: FontWeight.w300,
@@ -124,7 +123,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                             Text(
                               widget.coffeeInfo.rating.toString() + "/5",
                               style: TextStyle(
-                                fontFamily: 'Avenir',
                                 fontSize: 18,
                                 color: primaryTextColor,
                                 fontWeight: FontWeight.w300,
@@ -155,7 +153,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                           maxLines: 100,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontFamily: 'Avenir',
                             fontSize: 20,
                             color: contentTextColor,
                             fontWeight: FontWeight.w500,
@@ -175,7 +172,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                         Text(
                           'Menu của chúng tôi',
                           style: TextStyle(
-                            fontFamily: 'Avenir',
                             fontSize: 25,
                             color: const Color(0xff47455f),
                             fontWeight: FontWeight.w300,
@@ -224,7 +220,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                           Text(
                             'Coffeeholic nghĩ gì về quán?',
                             style: TextStyle(
-                              fontFamily: 'Avenir',
                               fontSize: 25,
                               color: const Color(0xff47455f),
                               fontWeight: FontWeight.w300,
@@ -268,7 +263,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                           child: Text(
                             'Tag',
                             style: TextStyle(
-                              fontFamily: 'Avenir',
                               fontSize: 22,
                               color: ColorApp.colorWhite,
                               fontWeight: FontWeight.w300,
@@ -284,7 +278,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                               maxLines: 100,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                fontFamily: 'Avenir',
                                 fontSize: 20,
                                 color: hashtagColor,
                               ),
@@ -309,7 +302,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                     child: Text(
                       'Thư viện ảnh',
                       style: TextStyle(
-                        fontFamily: 'Avenir',
                         fontSize: 25,
                         color: const Color(0xff47455f),
                         fontWeight: FontWeight.w300,
@@ -345,7 +337,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                     child: Text(
                       'Đánh giá và bình luận',
                       style: TextStyle(
-                        fontFamily: 'Avenir',
                         fontSize: 25,
                         color: const Color(0xff47455f),
                         fontWeight: FontWeight.w300,
@@ -361,7 +352,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                         Text(
                           widget.coffeeInfo.rating.toStringAsFixed(2) + "/5",
                           style: TextStyle(
-                            fontFamily: 'Avenir',
                             fontSize: 18,
                             color: primaryTextColor,
                             fontWeight: FontWeight.w400,
@@ -386,7 +376,6 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                         Text(
                           '('+ widget.coffeeInfo.comment.length.toString()+ ' bình luận)',
                           style: TextStyle(
-                            fontFamily: 'Avenir',
                             fontSize: 14,
                             color: primaryTextColor,
                             fontWeight: FontWeight.w300,
@@ -470,7 +459,7 @@ class _CoffeeShopDetailPage extends State<CoffeeShopDetailPage> {
                           ),
                           Wrap(
                             children: [
-                              Container(width: w*90,height: h*30,
+                              Container(width: w*90,height: h*40,
                                   child: new ListView.separated(itemCount: widget.coffeeInfo.comment.length,separatorBuilder: (context,index){
                                     return Divider(color: ColorApp.colorBrown.withOpacity(0.8),thickness: 1.0);
                                   },itemBuilder: (context,index){
@@ -602,7 +591,6 @@ class CommentDetail extends StatelessWidget{
                       maxLines: 100,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                        fontFamily: 'Avenir',
                         fontSize: 18,
                         color: contentTextColor,
                       ),

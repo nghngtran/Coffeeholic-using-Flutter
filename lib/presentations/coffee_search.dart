@@ -31,7 +31,7 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
   @override
   void initState() {
     _tabController = new TabController(length: 2, vsync: this);
-    this._dummyCoffeeShop = List.from(dummyCoffeeShop);
+    this._dummyCoffeeShop = dummyCoffeeShop;
     super.initState();
     controller.addListener(_printLatestValue);
     _tabController.addListener(_handleTabSelection);
@@ -39,18 +39,37 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
 
   onSearch(String text) async {
     print("Searching for: ${controller.text}");
-    if(controller.text.isEmpty) {
-      this._dummyCoffeeShop = List.from(dummyCoffeeShop);
-    }
-    else {
-      List<CoffeeShop> searchList = List.from(dummyCoffeeShop);
-      for (int i = 0; i < dummyCoffeeShop.length; i++) {
-        if(!dummyCoffeeShop[i].name.contains(controller.text))
-          searchList.removeAt(i);
-      }
-      this._dummyCoffeeShop = searchList;
-    }
+    List<CoffeeShop> searchList = [];
     setState(() {
+      if(controller.text.isNotEmpty) {
+        dummyCoffeeShop.forEach((shop) {
+          print(shop.name);
+          if(dropdownValue.contains("Tất cả")) {
+            if(shop.name.toLowerCase().contains(controller.text.toLowerCase())) {
+              searchList.add(shop);
+            }
+          }
+          else {
+            if(shop.name.toLowerCase().contains(controller.text.toLowerCase()) && shop.district.toLowerCase().contains(dropdownValue.toLowerCase())) {
+              searchList.add(shop);
+            }
+          }
+        });
+        this._dummyCoffeeShop = searchList;
+      }
+      else{
+        dummyCoffeeShop.forEach((shop) {
+          if(dropdownValue.contains("Tất cả")) {
+            searchList.add(shop);
+          }
+          else {
+            if(shop.district.toLowerCase().contains(dropdownValue.toLowerCase())) {
+              searchList.add(shop);
+            }
+          }
+        });
+        this._dummyCoffeeShop = searchList;
+      }
     });
   }
 
@@ -140,6 +159,7 @@ class _CoffeeSearchPage extends State<CoffeeSearchPage> with SingleTickerProvide
                           onChanged: (String newValue) {
                             setState(() {
                               dropdownValue = newValue;
+                              onSearch("filter");
                             });
                           },
                           items: this.listItem,
