@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 50.0,right: 50.0),
+              padding: EdgeInsets.only(left: 60.0,right: 60.0),
               child: Row(mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
